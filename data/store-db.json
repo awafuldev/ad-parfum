@@ -58,7 +58,7 @@
           "size_ml": 10,
           "price": 68000,
           "compare_at_price": 75000,
-          "stock": 17,
+          "stock": 16,
           "sku": "LAT-KHA-10",
           "is_available": true
         },
@@ -655,38 +655,72 @@
       "name": "Perfumes Árabes",
       "slug": "arabes",
       "description": "Fragancias de Medio Oriente de alto rendimiento, notas ricas en especias, maderas preciosas y vainillas gourmand.",
-      "image_url": "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=80"
+      "image_url": "/images/hero-campaign.jpg"
     },
     {
       "id": "cat-decants",
       "name": "Decants & Muestras (5ml - 10ml)",
       "slug": "decants",
       "description": "Muestras fraccionadas en atomizadores de cristal de alta precisión para probar en piel antes de invertir en botella completa.",
-      "image_url": "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80"
+      "image_url": "/images/alchemy-ingredients.jpg"
     },
     {
       "id": "cat-nicho",
       "name": "Alta Gama & Nicho",
       "slug": "nicho",
       "description": "Elixires exclusivos para paladares olfativos refinados que buscan exclusividad absoluta y acordes no comerciales.",
-      "image_url": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=800&q=80"
+      "image_url": "/images/noir-crystal.jpg"
     },
     {
       "id": "cat-masculinos",
       "name": "Masculinos & Bestias Negras",
       "slug": "masculinos",
       "description": "Aromas viriles, magnéticos, con proyección pesada para noche, citas y uso versátil de alto impacto.",
-      "image_url": "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80"
+      "image_url": "/images/azure-aquatic.jpg"
     },
     {
       "id": "cat-femeninos",
       "name": "Femeninos & Gourmands",
       "slug": "femeninos",
       "description": "Composiciones dulces, avainilladas, florales y sensuales con secados cremosos irresistibles.",
-      "image_url": "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=80"
+      "image_url": "/images/hero-campaign.jpg"
     }
   ],
   "orders": [
+    {
+      "id": "ord-1792509222477",
+      "reference": "AD-2026-8483",
+      "customer_name": "Valentina Gómez",
+      "customer_email": "valentina@ejemplo.co",
+      "customer_phone": "3109876543",
+      "shipping_address": "Carrera 7 #71-52, Edificio Aurora, Apto 901",
+      "shipping_city": "Bogotá",
+      "shipping_department": "Cundinamarca",
+      "delivery_notes": "Dejar en recepción con el conserje",
+      "shipping_method": "standard",
+      "shipping_fee": 15000,
+      "subtotal": 68000,
+      "total": 83000,
+      "payment_method": "contra_entrega",
+      "payment_status": "paid",
+      "status": "shipped",
+      "items": [
+        {
+          "product_id": "prod-khamrah",
+          "variant_id": "var-khamrah-10ml",
+          "product_name": "Khamrah",
+          "brand_name": "Lattafa Perfumes",
+          "variant_name": "Decant 10 ml (Atomizador Viaje)",
+          "size_ml": 10,
+          "unit_price": 68000,
+          "quantity": 1,
+          "total_price": 68000,
+          "image": "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1000&q=85"
+        }
+      ],
+      "created_at": "2026-10-20T15:13:42.477Z",
+      "updated_at": "2026-10-20T15:13:42.672Z"
+    },
     {
       "id": "ord-1792506437510",
       "reference": "AD-2026-1126",

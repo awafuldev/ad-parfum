@@ -1,107 +1,139 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles, Droplets, ShieldCheck, Clock, Compass } from "lucide-react";
+import { ArrowRight, Sparkles, Compass, Droplet, ShieldCheck, ChevronDown } from "lucide-react";
 
 export function Hero() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [scrollY, setScrollY] = useState(0);
   const [mounted, setMounted] = useState(false);
+  const heroRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     setMounted(true);
+
     const handleMouseMove = (e: MouseEvent) => {
-      // Subtle dampening for luxury camera parallax
-      const x = (e.clientX / window.innerWidth - 0.5) * 16;
-      const y = (e.clientY / window.innerHeight - 0.5) * 16;
+      const x = (e.clientX / window.innerWidth - 0.5) * 24;
+      const y = (e.clientY / window.innerHeight - 0.5) * 24;
       setMousePos({ x, y });
     };
 
-    if (typeof window !== "undefined" && !("ontouchstart" in window)) {
-      window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      if (!("ontouchstart" in window)) {
+        window.addEventListener("mousemove", handleMouseMove, { passive: true });
+      }
     }
 
     return () => {
+      window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
   return (
-    <section className="relative min-h-[92vh] lg:min-h-[96vh] flex items-center justify-center bg-espresso overflow-hidden grain-overlay select-none">
-      
-      {/* 1. Cinematic Studio Background with Directional Light & Atmospheric Depth */}
+    <section
+      ref={heroRef}
+      className="relative min-h-[96vh] lg:min-h-screen flex flex-col justify-between bg-espresso overflow-hidden grain-overlay select-none"
+    >
+      {/* 1. Large Edge-to-Edge Hero Background Visual with Cinematic Clip-Path Reveal */}
       <div
-        className="absolute inset-0 pointer-events-none transition-transform duration-1000 ease-out will-change-transform"
+        className="absolute inset-0 pointer-events-none transition-all duration-1000 ease-out will-change-transform"
         style={{
+          clipPath: mounted
+            ? "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+            : "polygon(0 15%, 100% 15%, 100% 85%, 0 85%)",
           transform: mounted
-            ? `translate3d(${mousePos.x * -0.6}px, ${mousePos.y * -0.6}px, 0) scale(1.05)`
-            : "scale(1.02)",
+            ? `translate3d(${mousePos.x * -0.3}px, ${mousePos.y * -0.3 + scrollY * 0.18}px, 0) scale(${1.04 + scrollY * 0.0003})`
+            : "scale(1.08)",
         }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=2400&q=95"
+          src="/images/hero-campaign.jpg"
           alt="A&D Parfum Haute Parfumerie Campaign"
-          className="w-full h-full object-cover object-center filter brightness-[0.42] contrast-[1.25] saturate-[0.9]"
+          className="w-full h-full object-cover object-[center_35%] lg:object-center filter brightness-[0.62] contrast-[1.18] saturate-[1.05]"
         />
 
-        {/* Multi-layered Studio Light Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/70 to-espresso/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-espresso via-espresso/80 to-transparent" />
-        <div className="absolute top-1/4 right-1/3 w-[500px] h-[500px] bg-champagne/10 rounded-full blur-[120px] pointer-events-none animate-pulseGlow" />
+        {/* Sophisticated Multi-Angle Darkening & Gold Light Auras */}
+        <div className="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/40 to-espresso/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-espresso/90 via-espresso/45 to-transparent" />
+        <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-champagne/15 rounded-full blur-[150px] pointer-events-none animate-pulseGlow" />
       </div>
 
-      {/* 2. Main Content Architecture */}
-      <div className="relative z-10 max-w-cowboy mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 w-full">
-        
-        {/* Brand Stamp & Monogram Emblem Header */}
-        <div className="flex flex-col items-center lg:items-start mb-8 text-center lg:text-left">
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sand/10 backdrop-blur-md border border-champagne/35 text-[11px] font-medium tracking-luxury text-champagne mb-4 shadow-lg animate-fadeInUp">
-            <span className="w-1.5 h-1.5 rounded-full bg-champagne animate-pulse" />
-            <span className="font-editorial text-xs italic text-sand">Maison de Haute Parfumerie</span>
-            <span className="text-sand/30">•</span>
-            <span className="text-porcelain uppercase font-semibold">Dubái & Nicho 2026</span>
-          </div>
+      {/* 2. Top Campaign Monogram Bar */}
+      <div className="relative z-20 max-w-editorial mx-auto px-4 sm:px-6 lg:px-12 pt-8 sm:pt-10 w-full flex items-center justify-between">
+        <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-espresso/80 backdrop-blur-md border border-champagne/30 text-[11px] tracking-luxury text-champagne shadow-xl">
+          <span className="w-1.5 h-1.5 rounded-full bg-champagne animate-pulse" />
+          <span className="font-editorial text-xs italic text-sand tracking-wide">
+            Maison de Haute Parfumerie
+          </span>
+          <span className="text-sand/30">•</span>
+          <span className="text-porcelain uppercase font-semibold">Bogotá & Dubái</span>
         </div>
 
-        {/* Asymmetrical Editorial Composition Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
-          {/* Left / Editorial Typography & Purchasing Intent */}
-          <div className="lg:col-span-7 space-y-7 text-center lg:text-left">
-            
-            <h1 className="heading-hero text-porcelain font-editorial max-w-2xl mx-auto lg:mx-0">
-              La memoria olfativa hecha{" "}
-              <span className="italic font-light text-champagne-light drop-shadow-sm">
-                obra de arte.
-              </span>
-            </h1>
+        <div className="hidden sm:flex items-center gap-4 text-[11px] tracking-luxury text-sand/70 uppercase">
+          <span>Decants Extraídos Bajo Pedido</span>
+          <span className="text-champagne/40">/</span>
+          <span className="text-champagne font-medium">100% Extracto Genuino</span>
+        </div>
+      </div>
 
-            <p className="text-base sm:text-lg text-sand/85 font-light leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Curaduría exclusiva de elixires de Medio Oriente y perfumería de autor. Botellas completas de colección y decants fraccionados de 5ml y 10ml en atomizadores de cristal puro, extraídos bajo pedido.
+      {/* 3. Main Center Stage: Asymmetric Editorial Typography & Hero Dominance */}
+      <div className="relative z-20 max-w-editorial mx-auto px-4 sm:px-6 lg:px-12 py-12 lg:py-16 w-full flex-1 flex flex-col justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          {/* Left Column: Bold Asymmetric Headline with Staggered Line Breaks */}
+          <div className="lg:col-span-8 space-y-6 lg:space-y-8">
+            
+            <div className="space-y-2">
+              <span className="block text-champagne font-editorial text-lg sm:text-xl md:text-2xl italic tracking-wider">
+                Colección Exclusiva 2026
+              </span>
+              
+              <h1 className="font-editorial text-porcelain tracking-tight">
+                <span className="block text-5xl sm:text-7xl md:text-8xl lg:text-[6.5rem] font-normal leading-[0.88] uppercase tracking-[-0.03em] drop-shadow-md">
+                  L&apos;Alchimie
+                </span>
+                <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-light italic text-sand pl-3 sm:pl-10 lg:pl-16 leading-[0.92] drop-shadow-sm">
+                  de la Piel
+                </span>
+              </h1>
+            </div>
+
+            <p className="text-sm sm:text-base lg:text-lg text-sand/85 font-light leading-relaxed max-w-xl">
+              Curaduría de alta perfumería oriental y nicho internacional. Botellas completas de colección y decants fraccionados de 5&nbsp;ml y 10&nbsp;ml en atomizadores de cristal puro, preservando la concentración y estela original.
             </p>
 
-            {/* Olfactory Notes Micro-Strip */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1 text-xs">
-              <span className="px-3 py-1 rounded-full bg-sand/10 border border-sand/20 text-sand/90 backdrop-blur-sm">
+            {/* Olfactory Notes Spectrum Strip */}
+            <div className="flex flex-wrap items-center gap-2 pt-1 text-xs">
+              <span className="px-3.5 py-1.5 rounded-full bg-espresso/70 border border-sand/20 text-sand/90 backdrop-blur-md">
                 Canela de Ceilán
               </span>
-              <span className="px-3 py-1 rounded-full bg-sand/10 border border-sand/20 text-sand/90 backdrop-blur-sm">
+              <span className="px-3.5 py-1.5 rounded-full bg-espresso/70 border border-sand/20 text-sand/90 backdrop-blur-md">
                 Dátiles de Arabia
               </span>
-              <span className="px-3 py-1 rounded-full bg-sand/10 border border-sand/20 text-sand/90 backdrop-blur-sm">
+              <span className="px-3.5 py-1.5 rounded-full bg-espresso/70 border border-sand/20 text-sand/90 backdrop-blur-md">
                 Vainilla Bourbon
               </span>
-              <span className="px-3 py-1 rounded-full bg-champagne/15 border border-champagne/40 text-champagne-light backdrop-blur-sm font-medium">
-                Cristalería de Lujo
+              <span className="px-3.5 py-1.5 rounded-full bg-espresso/70 border border-sand/20 text-sand/90 backdrop-blur-md">
+                Ámbar & Maderas
+              </span>
+              <span className="px-3.5 py-1.5 rounded-full bg-champagne/20 border border-champagne/45 text-champagne-light backdrop-blur-md font-medium">
+                Atomizador de Cristal
               </span>
             </div>
 
-            {/* Direct Action Group */}
-            <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4">
+            {/* Direct Commercial CTAs */}
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <Link
                 href="/perfumes"
-                className="btn-gold py-4 px-8 text-xs flex items-center justify-center gap-2 group tracking-wide font-medium shadow-2xl"
+                className="btn-gold py-4 px-8 text-xs flex items-center justify-center gap-2.5 group shadow-2xl font-semibold tracking-wide"
               >
                 <span>Explorar Colección de Fragancias</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" />
@@ -109,108 +141,109 @@ export function Hero() {
 
               <Link
                 href="/perfumes?category=cat-decants"
-                className="btn-secondary border-sand/35 text-porcelain hover:bg-sand/15 hover:border-champagne py-4 px-8 text-xs text-center tracking-wide"
+                className="btn-secondary border-sand/40 text-porcelain hover:bg-sand/15 hover:border-champagne py-4 px-8 text-xs text-center tracking-wide backdrop-blur-sm"
               >
                 Probar Decants (5ml y 10ml)
               </Link>
             </div>
 
-            {/* Colombian Nationwide Shipping & Trust Marks */}
-            <div className="pt-6 border-t border-sand/15 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs text-sand/75 text-left">
-              <div className="space-y-0.5">
-                <p className="font-semibold text-porcelain flex items-center gap-1.5 text-xs">
-                  <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
-                  100% Extracto Genuino
-                </p>
-                <p className="text-[11px] text-sand/55 font-light">Directo de botellas oficiales</p>
-              </div>
-              <div className="space-y-0.5">
-                <p className="font-semibold text-porcelain flex items-center gap-1.5 text-xs">
-                  <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
-                  Atomizador de Cristal
-                </p>
-                <p className="text-[11px] text-sand/55 font-light">Bruma fina sin plásticos</p>
-              </div>
-              <div className="col-span-2 sm:col-span-1 space-y-0.5">
-                <p className="font-semibold text-porcelain flex items-center gap-1.5 text-xs">
-                  <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
-                  Envíos en Colombia
-                </p>
-                <p className="text-[11px] text-sand/55 font-light">Bogotá, Medellín, Cali y más</p>
-              </div>
-            </div>
-
           </div>
 
-          {/* Right / Sculptural Bottle Showcase & Official Logo Integration */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+          {/* Right Column: Floating Luxury Hologram Badge & Brand Emblem */}
+          <div className="lg:col-span-4 flex justify-center lg:justify-end">
             <div
-              className="relative w-full max-w-md p-8 sm:p-10 rounded-cowboy bg-espresso-card/80 backdrop-blur-2xl border border-champagne/30 shadow-[0_20px_60px_rgba(0,0,0,0.6)] space-y-6 transition-transform duration-700 ease-out group"
+              className="relative p-7 sm:p-9 rounded-cowboy bg-espresso/75 backdrop-blur-xl border border-champagne/35 shadow-[0_25px_60px_rgba(0,0,0,0.7)] space-y-5 max-w-sm w-full transition-transform duration-700 ease-out group hover:border-champagne"
               style={{
                 transform: mounted
-                  ? `translate3d(${mousePos.x * 0.4}px, ${mousePos.y * 0.4}px, 0)`
+                  ? `translate3d(${mousePos.x * 0.35}px, ${mousePos.y * 0.35}px, 0)`
                   : "none",
               }}
             >
-              {/* Header Badge */}
-              <div className="flex items-center justify-between border-b border-sand/15 pb-4">
+              <div className="flex items-center justify-between border-b border-sand/15 pb-3.5">
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-3.5 h-3.5 text-champagne" />
                   <span className="text-[10px] uppercase tracking-luxury text-champagne font-bold">
-                    Sello de Pureza A&D
+                    Certificación de Origen
                   </span>
                 </div>
-                <span className="text-[10px] text-sand/50 tracking-wider">Edición 2026</span>
+                <span className="text-[10px] text-sand/50 tracking-wider">A&D 2026</span>
               </div>
 
-              {/* Official Logo Presentation with Soft Gold Glow */}
-              <div className="py-6 text-center relative">
-                <div className="absolute inset-0 bg-champagne/5 rounded-full blur-2xl pointer-events-none" />
+              {/* Logo Glow Stage */}
+              <div className="py-4 text-center relative">
+                <div className="absolute inset-0 bg-champagne/10 rounded-full blur-xl pointer-events-none" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/logo-light.png"
                   alt="A&D Parfum"
-                  className="h-28 sm:h-32 w-auto mx-auto object-contain filter drop-shadow-[0_4px_16px_rgba(204,167,39,0.3)] transition-transform duration-700 group-hover:scale-105"
+                  className="h-24 sm:h-28 w-auto mx-auto object-contain filter drop-shadow-[0_4px_20px_rgba(204,167,39,0.4)] transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
 
-              {/* Fragrance Philosophy Quote */}
-              <div className="space-y-2 text-center lg:text-left">
-                <p className="font-editorial text-lg text-porcelain italic font-light leading-snug">
-                  &quot;El perfume no se compra a ciegas; se experimenta y se transforma en la propia piel.&quot;
+              <div className="space-y-1.5 text-center">
+                <p className="font-editorial text-base text-porcelain italic font-light leading-snug">
+                  &quot;El perfume no se compra a ciegas; se vive y evoluciona en la propia piel.&quot;
                 </p>
-                <p className="text-[11px] text-sand/65 font-light leading-relaxed">
-                  Cada decant es extraído bajo pedido en nuestro laboratorio para preservar las notas de salida y aceites esenciales intactos.
+                <p className="text-[11px] text-sand/65 font-light">
+                  Muestras desde <strong className="text-champagne font-semibold">$ 30.000 COP</strong>
                 </p>
               </div>
 
-              {/* Pricing & Link */}
-              <div className="pt-4 border-t border-sand/15 flex items-center justify-between text-xs">
-                <div>
-                  <span className="text-[10px] text-sand/60 block uppercase font-medium">Muestras de Autor Desde</span>
-                  <span className="text-base font-semibold text-champagne">$ 30.000 COP</span>
-                </div>
-                <Link
-                  href="/perfumes?category=cat-decants"
-                  className="inline-flex items-center gap-1.5 text-xs text-porcelain hover:text-champagne transition-colors font-medium"
-                >
-                  <span>Ver Formatos</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-champagne" />
-                </Link>
+              <div className="pt-3 border-t border-sand/15 flex items-center justify-between text-xs">
+                <span className="text-[10px] text-sand/60 uppercase">Envío Colombia</span>
+                <span className="text-xs text-emerald-400 font-medium flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  En Stock Inmediato
+                </span>
               </div>
-
             </div>
           </div>
 
         </div>
-
       </div>
 
-      {/* Subtle Scroll Cue */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
-        <span className="text-[9px] uppercase tracking-luxury text-sand">Descubrir</span>
-        <div className="w-4 h-7 rounded-full border border-sand/40 flex items-start justify-center p-1">
-          <span className="w-1 h-1.5 rounded-full bg-champagne animate-bounce" />
+      {/* 4. Bottom Editorial Transition Bar into the Catalog */}
+      <div className="relative z-20 border-t border-sand/15 bg-espresso/80 backdrop-blur-md">
+        <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-12 py-4 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+          
+          {/* Category Quick Levers */}
+          <div className="flex items-center flex-wrap justify-center gap-6 text-[12px] text-sand/80 font-medium">
+            <Link
+              href="/perfumes?category=cat-arabes"
+              className="hover:text-champagne transition-colors flex items-center gap-1.5"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-champagne/60" />
+              <span>Perfumes Árabes</span>
+            </Link>
+            <Link
+              href="/perfumes?category=cat-decants"
+              className="hover:text-champagne transition-colors flex items-center gap-1.5"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
+              <span className="text-porcelain font-semibold">Decants & Muestras</span>
+            </Link>
+            <Link
+              href="/perfumes?category=cat-masculinos"
+              className="hover:text-champagne transition-colors flex items-center gap-1.5"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-champagne/60" />
+              <span>Masculinos de Élite</span>
+            </Link>
+            <Link
+              href="/#descubrimiento"
+              className="hover:text-champagne transition-colors flex items-center gap-1.5 text-champagne-light"
+            >
+              <Compass className="w-3.5 h-3.5" />
+              <span>Explorador Olfativo</span>
+            </Link>
+          </div>
+
+          {/* Scroll Cue Indicator */}
+          <div className="flex items-center gap-2 text-sand/60 hover:text-champagne transition-colors cursor-pointer">
+            <span className="text-[10px] uppercase tracking-luxury">Desplazar hacia abajo</span>
+            <ChevronDown className="w-3.5 h-3.5 animate-bounce text-champagne" />
+          </div>
+
         </div>
       </div>
 

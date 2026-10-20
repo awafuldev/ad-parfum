@@ -9,8 +9,8 @@ import { GlassTiltCard } from "@/components/ui/motion/GlassTiltCard";
 
 export function FeaturedEditorial() {
   return (
-    <section className="py-28 bg-porcelain border-b border-sand/70 grain-overlay relative">
-      <div className="max-w-cowboy mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 lg:py-32 bg-porcelain border-b border-sand/70 grain-overlay relative">
+      <div className="max-w-editorial mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* Section Header */}
         <RevealOnScroll direction="up" delayMs={50}>
@@ -24,7 +24,7 @@ export function FeaturedEditorial() {
                 Los Iconos de la Casa A&D
               </h2>
             </div>
-            <p className="text-sm text-taupe max-w-md font-light leading-relaxed">
+            <p className="text-xs sm:text-sm text-taupe max-w-md font-light leading-relaxed">
               Composiciones galardonadas que han transformado el panorama de la perfumería internacional con estelas imponentes y longevidades de hasta 16 horas en piel.
             </p>
           </div>
@@ -94,7 +94,7 @@ export function FeaturedEditorial() {
                   <div className="w-full sm:w-1/2 aspect-[4/5] rounded-cowboy overflow-hidden bg-sand/20 border border-sand relative glass-sheen">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=85"
+                      src="/images/hero-campaign.jpg"
                       alt="Lattafa Khamrah en A&D Parfum"
                       className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
@@ -130,7 +130,7 @@ export function FeaturedEditorial() {
                   <div className="aspect-[16/10] rounded-cowboy overflow-hidden bg-sand/10 border border-sand/20 my-4 relative glass-sheen">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=85"
+                      src="/images/azure-aquatic.jpg"
                       alt="Rasasi Hawas for Him en A&D Parfum"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-95"
                     />

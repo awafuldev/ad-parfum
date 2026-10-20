@@ -4,6 +4,7 @@ import { Hero } from "@/components/home/Hero";
 import { FeaturedEditorial } from "@/components/home/FeaturedEditorial";
 import { CategoryGrid } from "@/components/home/CategoryGrid";
 import { BestsellersShowcase } from "@/components/home/BestsellersShowcase";
+import { SignatureMotionExperience } from "@/components/home/SignatureMotionExperience";
 import { OlfactoryExplorer } from "@/components/home/OlfactoryExplorer";
 import { BrandStrip } from "@/components/home/BrandStrip";
 import { BrandStory } from "@/components/home/BrandStory";
@@ -20,6 +21,7 @@ export default async function HomePage() {
       <FeaturedEditorial />
       <CategoryGrid />
       <BestsellersShowcase products={products} />
+      <SignatureMotionExperience />
       <OlfactoryExplorer products={products} />
       <BrandStrip />
       <BrandStory />
