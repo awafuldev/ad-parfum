@@ -17,6 +17,8 @@ import {
   Wind,
   Layers,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   ArrowRight,
   ShoppingBag,
   MessageCircle,
@@ -50,9 +52,50 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
   const [showStickyBar, setShowStickyBar] = useState(false);
 
   const mainActionRef = useRef<HTMLDivElement>(null);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
 
   const images = product.images && product.images.length > 0 ? product.images : [product.primary_image];
   const activeImage = images[selectedImageIndex] || product.primary_image;
+
+  // Touch handlers for mobile swipe navigation
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    const distance = touchStartX.current - touchEndX.current;
+    if (distance > 40 && images.length > 1) {
+      // Swiped left -> next image
+      setSelectedImageIndex((prev) => (prev + 1) % images.length);
+    } else if (distance < -40 && images.length > 1) {
+      // Swiped right -> previous image
+      setSelectedImageIndex((prev) => (prev - 1 + images.length) % images.length);
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
+  // Keyboard navigation for desktop gallery / zoom
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (images.length <= 1) return;
+      if (e.key === "ArrowRight") {
+        setSelectedImageIndex((prev) => (prev + 1) % images.length);
+      } else if (e.key === "ArrowLeft") {
+        setSelectedImageIndex((prev) => (prev - 1 + images.length) % images.length);
+      } else if (e.key === "Escape" && zoomModalOpen) {
+        setZoomModalOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [images.length, zoomModalOpen]);
 
   // Observe when the main buy action scrolls out of view on mobile to show sticky bar
   useEffect(() => {
@@ -138,14 +181,23 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
           <div className="lg:col-span-6 space-y-4 lg:sticky lg:top-28">
             
             {/* Main Image Stage */}
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-white border border-sand shadow-sm group">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={activeImage}
-                alt={`${product.name} — ${product.brand_name}`}
-                className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-103 cursor-pointer"
-                onClick={() => setZoomModalOpen(true)}
-              />
+            <div
+              className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[#FBFBF9] border border-sand shadow-sm group touch-pan-y select-none"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
+              {/* Inner container to ensure perfect framing without cropping or distortion */}
+              <div className="w-full h-full flex items-center justify-center p-4 sm:p-6 bg-gradient-to-b from-[#FAFAF8] via-white to-[#F7F6F2]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  key={activeImage}
+                  src={activeImage}
+                  alt={`${product.name} — ${product.brand_name} (Foto ${selectedImageIndex + 1})`}
+                  className="max-w-full max-h-full w-auto h-auto object-contain transition-all duration-300 ease-out cursor-pointer drop-shadow-md group-hover:scale-102"
+                  onClick={() => setZoomModalOpen(true)}
+                />
+              </div>
 
               {/* Status Badges */}
               <div className="absolute top-4 left-4 flex flex-col gap-1.5 z-10 pointer-events-none">
@@ -161,16 +213,57 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
 
               {/* Zoom Trigger Button */}
               <button
+                type="button"
                 onClick={() => setZoomModalOpen(true)}
-                className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md p-3 rounded-full border border-sand text-espresso hover:bg-white shadow-md transition-all hover:scale-110 z-10"
+                className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md p-2.5 sm:p-3 rounded-full border border-sand text-espresso hover:bg-white shadow-md transition-all hover:scale-110 z-10"
                 title="Ampliar fotografía"
                 aria-label="Ampliar fotografía a pantalla completa"
               >
                 <ZoomIn className="w-4 h-4 text-espresso" />
               </button>
 
+              {/* Chevrons for Previous / Next (Available on touch and click) */}
+              {images.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedImageIndex((prev) => (prev - 1 + images.length) % images.length);
+                    }}
+                    className="absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/90 backdrop-blur-sm shadow-md border border-sand flex items-center justify-center text-espresso hover:bg-white active:scale-95 transition-all z-20"
+                    aria-label="Foto anterior"
+                  >
+                    <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedImageIndex((prev) => (prev + 1) % images.length);
+                    }}
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/90 backdrop-blur-sm shadow-md border border-sand flex items-center justify-center text-espresso hover:bg-white active:scale-95 transition-all z-20"
+                    aria-label="Siguiente foto"
+                  >
+                    <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </button>
+
+                  {/* Dots indicator for mobile & quick view */}
+                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-20 bg-espresso/60 backdrop-blur-xs px-2.5 py-1 rounded-full pointer-events-none">
+                    {images.map((_, idx) => (
+                      <span
+                        key={idx}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${
+                          selectedImageIndex === idx ? "bg-white w-4" : "bg-white/40 w-1.5"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+
               {/* Discreet Gender & Longevity */}
-              <div className="absolute bottom-4 left-4 z-10 hidden sm:block pointer-events-none">
+              <div className="absolute top-4 right-4 z-10 hidden sm:block pointer-events-none">
                 <span className="bg-espresso/80 backdrop-blur-md text-white text-[11px] font-medium px-3 py-1 rounded-full border border-white/10">
                   {product.gender} • {product.longevity}
                 </span>
@@ -179,24 +272,25 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
 
             {/* Discreet Thumbnails (Only when multiple images exist) */}
             {images.length > 1 && (
-              <div className="flex gap-2.5 overflow-x-auto pb-1 scrollbar-none">
+              <div className="flex gap-2.5 overflow-x-auto pb-1" style={{ scrollbarWidth: "none" }}>
                 {images.map((img, idx) => (
                   <button
-                    key={idx}
+                    key={`thumb-${idx}`}
                     type="button"
                     onClick={() => setSelectedImageIndex(idx)}
-                    className={`w-18 sm:w-20 aspect-[4/5] rounded-xl overflow-hidden border flex-shrink-0 transition-all duration-200 relative ${
-                      selectedImageIndex === idx
-                        ? "border-espresso ring-2 ring-espresso/30 shadow-sm scale-102"
-                        : "border-sand/70 opacity-60 hover:opacity-100"
-                    }`}
                     aria-label={`Ver imagen ${idx + 1}`}
+                    style={{ width: 68, minWidth: 68, height: 78, flexShrink: 0 }}
+                    className={`rounded-xl overflow-hidden border p-1 bg-white transition-all duration-200 flex items-center justify-center ${
+                      selectedImageIndex === idx
+                        ? "border-espresso ring-2 ring-espresso/30 shadow-sm"
+                        : "border-sand/70 opacity-60 hover:opacity-100 hover:border-sand"
+                    }`}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={img}
                       alt={`${product.name} miniatura ${idx + 1}`}
-                      className="w-full h-full object-cover"
+                      className="max-w-full max-h-full w-auto h-auto object-contain block"
                     />
                   </button>
                 ))}
@@ -719,18 +813,52 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
             <X className="w-6 h-6" />
           </button>
 
+          {/* Chevrons in zoom modal if multiple images */}
+          {images.length > 1 && (
+            <>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedImageIndex((prev) => (prev - 1 + images.length) % images.length);
+                }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md text-white flex items-center justify-center transition-all z-50"
+                aria-label="Foto anterior"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedImageIndex((prev) => (prev + 1) % images.length);
+                }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md text-white flex items-center justify-center transition-all z-50"
+                aria-label="Siguiente foto"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </>
+          )}
+
           <div
-            className="relative max-w-4xl max-h-[90vh] overflow-hidden rounded-2xl shadow-2xl"
+            className="relative max-w-4xl max-h-[90vh] overflow-hidden rounded-2xl shadow-2xl flex flex-col items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
+              key={activeImage}
               src={activeImage}
               alt={product.name}
-              className="w-full h-full max-h-[85vh] object-contain"
+              className="w-full h-full max-h-[82vh] object-contain transition-all duration-300"
             />
-            <div className="absolute bottom-3 left-3 right-3 bg-espresso/80 backdrop-blur-md p-2.5 rounded-xl text-center text-xs text-white">
-              {product.name} — {product.brand_name} (Fotografía oficial A&D Parfum)
+            <div className="absolute bottom-3 left-4 right-4 bg-espresso/85 backdrop-blur-md py-2 px-4 rounded-xl text-center text-xs text-white flex items-center justify-between">
+              <span>{product.name} — {product.brand_name}</span>
+              {images.length > 1 && (
+                <span className="font-semibold text-champagne bg-white/10 px-2.5 py-0.5 rounded-full">
+                  Foto {selectedImageIndex + 1} de {images.length}
+                </span>
+              )}
             </div>
           </div>
         </div>
