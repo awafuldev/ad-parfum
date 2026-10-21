@@ -198,7 +198,7 @@ export function EditorialProductCard({ product, featuredSpotlight = false }: Pro
         {/* Photographic Stage */}
         <Link
           href={`/perfumes/${product.id}`}
-          className="block aspect-[4/5] bg-gradient-to-b from-[#FBFBF9] via-[#FAF9F5] to-[#F2EFE9] border-b border-border/70 relative overflow-hidden flex items-center justify-center p-6 group/stage"
+          className="block aspect-[4/5] bg-gradient-to-b from-[#FBFBF9] via-[#FAF9F5] to-[#F2EFE9] border-b border-border/70 relative overflow-hidden flex items-center justify-center p-3 sm:p-6 group/stage"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -209,22 +209,22 @@ export function EditorialProductCard({ product, featuredSpotlight = false }: Pro
           />
 
           {/* Badges */}
-          <div className="absolute top-3.5 left-3.5 flex flex-col gap-1.5 z-10 pointer-events-none">
+          <div className="absolute top-2 left-2 sm:top-3.5 sm:left-3.5 flex flex-col gap-1 z-10 pointer-events-none">
             {product.is_bestseller && (
-              <span className="bg-wine text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1 w-fit">
-                <Flame className="w-3 h-3" />
+              <span className="bg-wine text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 sm:px-2.5 sm:py-0.5 rounded-full shadow-sm flex items-center gap-1 w-fit">
+                <Flame className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                 <span>Bestseller</span>
               </span>
             )}
             {product.featured && (
-              <span className="bg-noir text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-sm">
+              <span className="bg-noir text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 sm:px-2.5 sm:py-0.5 rounded-full shadow-sm">
                 Destacado
               </span>
             )}
           </div>
 
-          <div className="absolute top-3.5 right-3.5 z-10 pointer-events-none">
-            <span className="bg-white/95 backdrop-blur-md text-noir text-[10px] font-semibold px-2.5 py-1 rounded-full border border-border shadow-2xs">
+          <div className="absolute top-2 right-2 sm:top-3.5 sm:right-3.5 z-10 pointer-events-none">
+            <span className="bg-white/95 backdrop-blur-md text-noir text-[9px] sm:text-[10px] font-semibold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full border border-border shadow-2xs">
               {product.concentration}
             </span>
           </div>
@@ -239,7 +239,7 @@ export function EditorialProductCard({ product, featuredSpotlight = false }: Pro
         </Link>
 
         {/* Metadata */}
-        <div className="p-5 sm:p-6 space-y-3">
+        <div className="p-3 sm:p-6 space-y-2 sm:space-y-3">
           <div className="flex items-center justify-between text-[10px] uppercase font-bold tracking-luxury text-gray">
             <span>{product.brand_name}</span>
             <span className="text-[10px] bg-ivory px-2 py-0.5 rounded-full border border-border text-noir/70 font-semibold">
@@ -248,12 +248,12 @@ export function EditorialProductCard({ product, featuredSpotlight = false }: Pro
           </div>
 
           <Link href={`/perfumes/${product.id}`}>
-            <h3 className="font-editorial text-2xl font-normal text-noir line-clamp-1 group-hover:text-wine transition-colors">
+            <h3 className="font-editorial text-base sm:text-2xl font-normal text-noir line-clamp-2 group-hover:text-wine transition-colors">
               {product.name}
             </h3>
           </Link>
 
-          <p className="text-[11.5px] text-gray line-clamp-2 leading-relaxed font-light">
+          <p className="hidden sm:block text-[11.5px] text-gray line-clamp-2 leading-relaxed font-light">
             {product.short_description}
           </p>
 
@@ -265,8 +265,8 @@ export function EditorialProductCard({ product, featuredSpotlight = false }: Pro
             </span>
           </div>
 
-          {/* Quick Variant Selector */}
-          <div className="pt-2 border-t border-border/80">
+          {/* Quick Variant Selector — hidden on mobile to keep card compact */}
+          <div className="hidden sm:block pt-2 border-t border-border/80">
             <div className="flex items-center justify-between text-[10px] uppercase font-bold tracking-luxury text-gray mb-1.5">
               <span>Presentación:</span>
               <span className="text-noir font-semibold">{selectedVariant.size_ml} ml</span>
@@ -305,9 +305,9 @@ export function EditorialProductCard({ product, featuredSpotlight = false }: Pro
       </div>
 
       {/* Card Footer: Live Selected Price & Add Action */}
-      <div className="px-5 sm:px-6 pb-5 pt-3 border-t border-border flex items-center justify-between gap-3 mt-auto">
+      <div className="px-3 sm:px-6 pb-3 sm:pb-5 pt-2 sm:pt-3 border-t border-border flex items-center justify-between gap-2 sm:gap-3 mt-auto">
         <div className="flex-shrink-0 flex items-center">
-          <span className="font-price text-xl sm:text-2xl font-bold text-noir leading-none tracking-tight">
+          <span className="font-price text-sm sm:text-2xl font-bold text-noir leading-none tracking-tight">
             {formatPrice(selectedVariant.price)}
           </span>
         </div>
@@ -316,7 +316,7 @@ export function EditorialProductCard({ product, featuredSpotlight = false }: Pro
           type="button"
           onClick={handleAddToCart}
           disabled={!selectedVariant.is_available}
-          className={`flex-1 h-11 px-4 rounded-full text-xs font-semibold tracking-wide flex items-center justify-center gap-2 transition-all shadow-xs cursor-pointer ${
+          className={`flex-1 h-9 sm:h-11 px-2.5 sm:px-4 rounded-full text-xs font-semibold tracking-wide flex items-center justify-center gap-1.5 sm:gap-2 transition-all shadow-xs cursor-pointer ${
             addedAnimation
               ? "bg-emerald-600 text-white"
               : selectedVariant.is_available
@@ -328,12 +328,12 @@ export function EditorialProductCard({ product, featuredSpotlight = false }: Pro
           {addedAnimation ? (
             <>
               <Check className="w-3.5 h-3.5" />
-              <span>¡Añadido!</span>
+              <span className="hidden sm:inline">¡Añadido!</span>
             </>
           ) : (
             <>
               <ShoppingBag className="w-3.5 h-3.5" />
-              <span>Añadir</span>
+              <span className="hidden sm:inline">Añadir</span>
             </>
           )}
         </button>

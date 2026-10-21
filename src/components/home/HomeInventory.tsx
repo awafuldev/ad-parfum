@@ -385,7 +385,7 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-7 pt-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-7 pt-8">
             {filteredProducts.map((product) => {
               const activeVariant =
                 cardSelectedVariants[product.id] ||
@@ -401,7 +401,7 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
                   className="group bg-white rounded-2xl border border-border/90 hover:border-noir transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-2xs hover:shadow-xl"
                 >
                   {/* Architectural Luxury Pedestal Stage */}
-                  <div className="relative aspect-[4/5] bg-gradient-to-b from-[#FBFBF9] via-[#FAF9F5] to-[#F2EFE9] border-b border-border/70 flex items-center justify-center p-6 sm:p-7 overflow-hidden">
+                  <div className="relative aspect-[4/5] bg-gradient-to-b from-[#FBFBF9] via-[#FAF9F5] to-[#F2EFE9] border-b border-border/70 flex items-center justify-center p-3 sm:p-7 overflow-hidden">
                     <Link href={`/perfumes/${product.id}`} className="w-full h-full flex items-center justify-center">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
@@ -413,26 +413,26 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
                     </Link>
 
                     {/* Concentration & Highlights Badges */}
-                    <div className="absolute top-3.5 left-3.5 flex flex-col gap-1.5 z-10 pointer-events-none">
-                      <span className="bg-noir/90 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full shadow-sm">
+                    <div className="absolute top-2 left-2 sm:top-3.5 sm:left-3.5 flex flex-col gap-1 z-10 pointer-events-none">
+                      <span className="bg-noir/90 backdrop-blur-md text-white text-[9px] sm:text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full shadow-sm">
                         {product.concentration}
                       </span>
                       {product.is_bestseller && (
-                        <span className="bg-wine text-white text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1 w-fit">
-                          <Flame className="w-3 h-3" />
+                        <span className="bg-wine text-white text-[9px] sm:text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 sm:px-2.5 sm:py-0.5 rounded-full shadow-sm flex items-center gap-1 w-fit">
+                          <Flame className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                           <span>Bestseller</span>
                         </span>
                       )}
                     </div>
 
                     {/* Stock Badge */}
-                    <div className="absolute top-3.5 right-3.5 z-10 pointer-events-none">
+                    <div className="absolute top-2 right-2 sm:top-3.5 sm:right-3.5 z-10 pointer-events-none">
                       {isAvailable ? (
-                        <span className="bg-white/95 backdrop-blur-md text-emerald-800 text-[10px] font-semibold px-2.5 py-1 rounded-full border border-emerald-200 shadow-2xs">
+                        <span className="bg-white/95 backdrop-blur-md text-emerald-800 text-[9px] sm:text-[10px] font-semibold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full border border-emerald-200 shadow-2xs">
                           En Stock
                         </span>
                       ) : (
-                        <span className="bg-noir/80 text-white/70 text-[10px] font-medium px-2.5 py-1 rounded-full">
+                        <span className="bg-noir/80 text-white/70 text-[9px] sm:text-[10px] font-medium px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full">
                           Agotado
                         </span>
                       )}
@@ -463,7 +463,7 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
                   </div>
 
                   {/* Card Content & Interactive Format Selector */}
-                  <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
+                  <div className="p-3 sm:p-6 flex-1 flex flex-col justify-between space-y-3 sm:space-y-4">
                     
                     {/* Header Info */}
                     <div className="space-y-1.5">
@@ -475,13 +475,13 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
                       </div>
 
                       <Link href={`/perfumes/${product.id}`}>
-                        <h3 className="font-editorial text-2xl font-normal text-noir group-hover:text-wine transition-colors line-clamp-1 leading-snug pt-0.5">
+                        <h3 className="font-editorial text-base sm:text-2xl font-normal text-noir group-hover:text-wine transition-colors line-clamp-2 leading-snug pt-0.5">
                           {product.name}
                         </h3>
                       </Link>
 
                       {/* Olfactory Notes Preview */}
-                      <p className="text-[11.5px] text-gray line-clamp-1 font-light flex items-center gap-1.5 pt-0.5">
+                      <p className="hidden sm:flex text-[11.5px] text-gray line-clamp-1 font-light items-center gap-1.5 pt-0.5">
                         <Droplet className="w-3 h-3 text-wine flex-shrink-0" />
                         <span>
                           {product.top_notes.slice(0, 2).join(", ")} • {product.base_notes[0] || product.olfactory_family}
@@ -489,46 +489,57 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
                       </p>
                     </div>
 
-                    {/* Intuitive Size / Presentation Segmented Control with Immediate Price Visibility */}
-                    <div className="space-y-2.5 pt-3 border-t border-border/80">
-                      <div className="flex items-center justify-between text-[10px] uppercase font-bold tracking-luxury text-gray">
-                        <span>Presentación:</span>
-                        <span className="text-noir font-semibold">{activeVariant?.size_ml} ml</span>
+                    {/* Size / Presentation Segmented Control (desktop) & Compact indicator (mobile) */}
+                    <div className="space-y-2 pt-2 sm:pt-3 border-t border-border/80">
+                      <div className="sm:hidden flex items-center justify-between text-[10px] text-gray">
+                        <span className="bg-ivory px-2 py-0.5 rounded border border-border text-noir font-medium">
+                          {activeVariant?.size_ml} ml
+                        </span>
+                        <Link href={`/perfumes/${product.id}`} className="text-wine text-[10px] font-semibold hover:underline">
+                          + Formatos
+                        </Link>
                       </div>
 
-                      <div className="grid grid-cols-3 gap-1.5 bg-ivory p-1 rounded-xl border border-border">
-                        {product.variants.map((v) => {
-                          const isSelected = activeVariant?.id === v.id;
-                          return (
-                            <button
-                              key={v.id}
-                              type="button"
-                              onClick={(e) => handleSelectVariant(product.id, v, e)}
-                              disabled={!v.is_available}
-                              className={`py-2 px-1 rounded-lg text-center transition-all duration-150 cursor-pointer ${
-                                !v.is_available
-                                  ? "opacity-35 cursor-not-allowed text-gray"
-                                  : isSelected
-                                  ? "bg-noir text-white shadow-xs font-bold"
-                                  : "bg-white text-noir hover:bg-border/40 font-medium"
-                              }`}
-                              title={`${v.name} — ${formatPrice(v.price)}`}
-                            >
-                              <span className="block text-[11px] leading-tight">
-                                {v.size_ml} ml
-                              </span>
-                              <span className={`block text-[9.5px] ${isSelected ? "text-white/80" : "text-gray"}`}>
-                                {formatPrice(v.price)}
-                              </span>
-                            </button>
-                          );
-                        })}
+                      <div className="hidden sm:block space-y-2.5">
+                        <div className="flex items-center justify-between text-[10px] uppercase font-bold tracking-luxury text-gray">
+                          <span>Presentación:</span>
+                          <span className="text-noir font-semibold">{activeVariant?.size_ml} ml</span>
+                        </div>
+
+                        <div className="grid grid-cols-3 gap-1.5 bg-ivory p-1 rounded-xl border border-border">
+                          {product.variants.map((v) => {
+                            const isSelected = activeVariant?.id === v.id;
+                            return (
+                              <button
+                                key={v.id}
+                                type="button"
+                                onClick={(e) => handleSelectVariant(product.id, v, e)}
+                                disabled={!v.is_available}
+                                className={`py-2 px-1 rounded-lg text-center transition-all duration-150 cursor-pointer ${
+                                  !v.is_available
+                                    ? "opacity-35 cursor-not-allowed text-gray"
+                                    : isSelected
+                                    ? "bg-noir text-white shadow-xs font-bold"
+                                    : "bg-white text-noir hover:bg-border/40 font-medium"
+                                }`}
+                                title={`${v.name} — ${formatPrice(v.price)}`}
+                              >
+                                <span className="block text-[11px] leading-tight">
+                                  {v.size_ml} ml
+                                </span>
+                                <span className={`block text-[9.5px] ${isSelected ? "text-white/80" : "text-gray"}`}>
+                                  {formatPrice(v.price)}
+                                </span>
+                              </button>
+                            );
+                          })}
+                        </div>
                       </div>
 
                       {/* Action Bar with Prominent Buy Button */}
-                      <div className="pt-3 border-t border-border flex items-center justify-between gap-3">
+                      <div className="pt-2 sm:pt-3 border-t border-border flex items-center justify-between gap-2 sm:gap-3">
                         <div className="flex-shrink-0 flex items-center">
-                          <span className="font-price text-xl sm:text-2xl font-bold text-noir tracking-tight leading-none">
+                          <span className="font-price text-sm sm:text-2xl font-bold text-noir tracking-tight leading-none">
                             {formatPrice(activeVariant?.price || product.base_price)}
                           </span>
                         </div>
@@ -538,7 +549,7 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
                           type="button"
                           onClick={(e) => handleQuickAdd(product, e)}
                           disabled={!isAvailable}
-                          className={`flex-1 h-11 px-4 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 shadow-xs ${
+                          className={`flex-1 h-9 sm:h-11 px-2.5 sm:px-4 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer flex items-center justify-center gap-1.5 sm:gap-2 shadow-xs ${
                             isAdded
                               ? "bg-emerald-600 text-white"
                               : isAvailable
@@ -549,16 +560,16 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
                         >
                           {isAdded ? (
                             <>
-                              <Check className="w-4 h-4 animate-in zoom-in" />
-                              <span>¡Añadido!</span>
+                              <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 animate-in zoom-in" />
+                              <span className="hidden sm:inline">¡Añadido!</span>
                             </>
                           ) : isAvailable ? (
                             <>
                               <ShoppingBag className="w-3.5 h-3.5" />
-                              <span>Añadir</span>
+                              <span className="hidden sm:inline">Añadir</span>
                             </>
                           ) : (
-                            <span>Agotado</span>
+                            <span className="text-[10px] sm:text-xs">Agotado</span>
                           )}
                         </button>
                       </div>
