@@ -195,27 +195,30 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
         
         {/* Intuitive Section Header with Business Credentials */}
         <div className="pb-8 border-b border-border space-y-4">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div>
-              <div className="inline-flex items-center gap-2 mb-2 px-3 py-1 rounded-full bg-white border border-border text-[11px] font-semibold uppercase tracking-luxury text-gray shadow-2xs">
-                <span className="w-2 h-2 rounded-full bg-wine inline-block" />
-                <span>Inventario Oficial Disponible</span>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-luxury text-gray">
+                <span className="w-1.5 h-1.5 rounded-full bg-wine" />
+                <span>02 — Colección &amp; Inventario Real</span>
               </div>
               <h2 className="font-editorial text-3xl sm:text-5xl font-normal text-noir tracking-tight">
                 Explora las fragancias
               </h2>
+              <p className="text-xs sm:text-sm text-gray font-light max-w-lg">
+                Decants auténticos en atomizador de cristal y frascos sellados. Perfumería árabe legendaria y elixires de nicho listos para entrega inmediata.
+              </p>
             </div>
 
             {/* Business Trust Metrics Pill */}
             <div className="flex flex-wrap items-center gap-2 text-xs text-noir font-medium">
-              <span className="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-border shadow-2xs">
+              <span className="inline-flex items-center gap-2 bg-white px-3.5 py-2 rounded-full border border-border shadow-2xs">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span>+100 Clientes en RD</span>
+                <span className="font-semibold text-noir">+100 Clientes en RD</span>
               </span>
-              <span className="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-border shadow-2xs">
-                <span>🚚 Envíos a todo el país en 24-48h</span>
+              <span className="inline-flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-full border border-border text-gray shadow-2xs">
+                <span>🚚 Envíos a todo el país</span>
               </span>
-              <span className="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-border shadow-2xs">
+              <span className="inline-flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-full border border-border text-gray shadow-2xs">
                 <span>✨ 100% Genuinos</span>
               </span>
             </div>
@@ -233,9 +236,9 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
                 <button
                   key={pill.id}
                   onClick={() => setSelectedCategory(pill.id)}
-                  className={`whitespace-nowrap px-4 py-2.5 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer ${
+                  className={`whitespace-nowrap px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer ${
                     isActive
-                      ? "bg-noir text-white shadow-md scale-102"
+                      ? "bg-noir text-white shadow-sm"
                       : "bg-white text-gray hover:text-noir border border-border hover:border-noir/30"
                   }`}
                 >
@@ -395,23 +398,23 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
               return (
                 <article
                   key={product.id}
-                  className="group bg-white rounded-cowboy border border-border hover:border-noir/40 transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-xl"
+                  className="group bg-white rounded-2xl border border-border/90 hover:border-noir transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-2xs hover:shadow-xl"
                 >
-                  {/* Image Stage with Quick Actions */}
-                  <div className="relative aspect-[4/5] bg-ivory overflow-hidden">
-                    <Link href={`/perfumes/${product.id}`} className="block w-full h-full">
+                  {/* Architectural Luxury Pedestal Stage */}
+                  <div className="relative aspect-[4/5] bg-gradient-to-b from-[#FBFBF9] via-[#FAF9F5] to-[#F2EFE9] border-b border-border/70 flex items-center justify-center p-6 sm:p-7 overflow-hidden">
+                    <Link href={`/perfumes/${product.id}`} className="w-full h-full flex items-center justify-center">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={product.primary_image}
-                        alt={product.name}
-                        className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-106"
+                        alt={`${product.name} — ${product.brand_name}`}
+                        className="max-w-full max-h-full w-auto h-auto object-contain drop-shadow-[0_16px_28px_rgba(0,0,0,0.09)] transition-transform duration-700 ease-out group-hover:scale-105"
                         loading="lazy"
                       />
                     </Link>
 
                     {/* Concentration & Highlights Badges */}
-                    <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10 pointer-events-none">
-                      <span className="bg-noir/85 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full shadow-sm">
+                    <div className="absolute top-3.5 left-3.5 flex flex-col gap-1.5 z-10 pointer-events-none">
+                      <span className="bg-noir/90 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full shadow-sm">
                         {product.concentration}
                       </span>
                       {product.is_bestseller && (
@@ -423,7 +426,7 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
                     </div>
 
                     {/* Stock Badge */}
-                    <div className="absolute top-3 right-3 z-10 pointer-events-none">
+                    <div className="absolute top-3.5 right-3.5 z-10 pointer-events-none">
                       {isAvailable ? (
                         <span className="bg-white/95 backdrop-blur-md text-emerald-800 text-[10px] font-semibold px-2.5 py-1 rounded-full border border-emerald-200 shadow-2xs">
                           En Stock
@@ -436,14 +439,14 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
                     </div>
 
                     {/* Quick View Button on Hover */}
-                    <div className="absolute inset-x-3 bottom-3 z-10 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute inset-x-3.5 bottom-3.5 z-10 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <button
                         onClick={(e) => {
                           e.preventDefault();
                           e.stopPropagation();
                           setQuickViewProduct(product);
                         }}
-                        className="flex-1 bg-white/95 backdrop-blur-md text-noir hover:bg-noir hover:text-white text-xs font-semibold py-2 px-3 rounded-full shadow-lg flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+                        className="flex-1 bg-white/95 backdrop-blur-md text-noir hover:bg-noir hover:text-white text-xs font-semibold py-2.5 px-3 rounded-full shadow-lg flex items-center justify-center gap-1.5 transition-all cursor-pointer"
                       >
                         <Eye className="w-3.5 h-3.5" />
                         <span>Vista Rápida</span>
@@ -451,7 +454,7 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
 
                       <Link
                         href={`/perfumes/${product.id}`}
-                        className="bg-white/95 backdrop-blur-md text-noir hover:bg-wine hover:text-white p-2 rounded-full shadow-lg flex items-center justify-center transition-all"
+                        className="bg-white/95 backdrop-blur-md text-noir hover:bg-wine hover:text-white p-2.5 rounded-full shadow-lg flex items-center justify-center transition-all"
                         title="Ver ficha completa"
                       >
                         <ChevronRight className="w-4 h-4" />
@@ -460,25 +463,25 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
                   </div>
 
                   {/* Card Content & Interactive Format Selector */}
-                  <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+                  <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
                     
                     {/* Header Info */}
                     <div className="space-y-1.5">
-                      <div className="flex items-center justify-between text-[11px] text-gray uppercase tracking-luxury font-medium">
+                      <div className="flex items-center justify-between text-[10px] text-gray uppercase tracking-luxury font-bold">
                         <span>{product.brand_name}</span>
-                        <span className="text-[10px] bg-ivory px-2 py-0.5 rounded-full border border-border">
+                        <span className="text-[10px] bg-ivory px-2 py-0.5 rounded-full border border-border text-noir/70 font-semibold">
                           {product.gender}
                         </span>
                       </div>
 
                       <Link href={`/perfumes/${product.id}`}>
-                        <h3 className="font-editorial text-xl sm:text-2xl font-bold text-noir hover:text-wine transition-colors line-clamp-1 leading-snug">
+                        <h3 className="font-editorial text-2xl font-normal text-noir group-hover:text-wine transition-colors line-clamp-1 leading-snug pt-0.5">
                           {product.name}
                         </h3>
                       </Link>
 
                       {/* Olfactory Notes Preview */}
-                      <p className="text-[11px] text-gray line-clamp-1 font-light flex items-center gap-1.5">
+                      <p className="text-[11.5px] text-gray line-clamp-1 font-light flex items-center gap-1.5 pt-0.5">
                         <Droplet className="w-3 h-3 text-wine flex-shrink-0" />
                         <span>
                           {product.top_notes.slice(0, 2).join(", ")} • {product.base_notes[0] || product.olfactory_family}
@@ -487,20 +490,22 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
                     </div>
 
                     {/* Intuitive Size / Presentation Segmented Control with Immediate Price Visibility */}
-                    <div className="space-y-2 pt-2 border-t border-border/80">
-                      <span className="text-[10px] uppercase font-bold tracking-luxury text-gray block">
-                        Presentación:
-                      </span>
+                    <div className="space-y-2.5 pt-3 border-t border-border/80">
+                      <div className="flex items-center justify-between text-[10px] uppercase font-bold tracking-luxury text-gray">
+                        <span>Presentación:</span>
+                        <span className="text-noir font-semibold">{activeVariant?.size_ml} ml</span>
+                      </div>
 
-                      <div className="grid grid-cols-3 gap-1 bg-ivory p-1 rounded-lg border border-border">
+                      <div className="grid grid-cols-3 gap-1.5 bg-ivory p-1 rounded-xl border border-border">
                         {product.variants.map((v) => {
                           const isSelected = activeVariant?.id === v.id;
                           return (
                             <button
                               key={v.id}
+                              type="button"
                               onClick={(e) => handleSelectVariant(product.id, v, e)}
                               disabled={!v.is_available}
-                              className={`py-1.5 px-1 rounded-md text-center transition-all duration-150 cursor-pointer ${
+                              className={`py-2 px-1 rounded-lg text-center transition-all duration-150 cursor-pointer ${
                                 !v.is_available
                                   ? "opacity-35 cursor-not-allowed text-gray"
                                   : isSelected
@@ -512,7 +517,7 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
                               <span className="block text-[11px] leading-tight">
                                 {v.size_ml} ml
                               </span>
-                              <span className={`block text-[9px] ${isSelected ? "text-white/80" : "text-gray"}`}>
+                              <span className={`block text-[9.5px] ${isSelected ? "text-white/80" : "text-gray"}`}>
                                 {formatPrice(v.price)}
                               </span>
                             </button>
@@ -523,8 +528,8 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
                       {/* Action Bar with Prominent Buy Button */}
                       <div className="pt-2 flex items-center justify-between gap-3">
                         <div>
-                          <span className="block text-[10px] text-gray font-medium">
-                            {activeVariant?.name || "Formato"}
+                          <span className="block text-[10px] text-gray uppercase tracking-wider font-medium">
+                            Total
                           </span>
                           <span className="font-editorial text-2xl font-bold text-noir leading-none">
                             {formatPrice(activeVariant?.price || product.base_price)}
@@ -533,9 +538,10 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
 
                         {/* Add to Cart Button */}
                         <button
+                          type="button"
                           onClick={(e) => handleQuickAdd(product, e)}
                           disabled={!isAvailable}
-                          className={`flex-1 py-2.5 px-3 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer flex items-center justify-center gap-1.5 shadow-sm ${
+                          className={`flex-1 py-3 px-4 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 shadow-xs ${
                             isAdded
                               ? "bg-emerald-600 text-white scale-102"
                               : isAvailable

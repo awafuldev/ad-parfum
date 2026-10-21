@@ -104,35 +104,35 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Right: Search, Cart, Admin */}
-          <div className="flex items-center gap-1.5 sm:gap-3">
+          {/* Right: Search, Admin, Cart */}
+          <div className="flex items-center gap-2 sm:gap-4">
             <button
               onClick={() => setSearchOpen(true)}
               className="p-2 text-white/80 hover:text-white rounded-full hover:bg-white/10 transition-colors"
               aria-label="Buscar fragancias"
+              title="Buscar en el catálogo"
             >
               <Search className="w-4 h-4" />
             </button>
 
             <Link
               href="/admin"
-              className="hidden sm:inline-flex text-[12px] font-medium text-white/60 hover:text-white px-2.5 py-1 rounded transition-colors"
+              className="hidden sm:inline-flex text-[11px] uppercase tracking-wider font-semibold text-white/50 hover:text-white px-2 py-1 rounded transition-colors"
             >
               Admin
             </Link>
 
-            {/* Shopping Bag Button */}
+            {/* Shopping Bag Boutique Button */}
             <button
               onClick={openCart}
-              className="relative p-2 text-white hover:text-white rounded-full hover:bg-white/10 transition-colors"
+              className="relative py-2 px-3 sm:px-4 rounded-full bg-white/10 hover:bg-white/15 border border-white/15 text-white transition-all flex items-center gap-2 text-xs font-semibold cursor-pointer shadow-sm active:scale-95"
               aria-label="Bolsa de compra"
             >
-              <ShoppingBag className="w-5 h-5" />
-              {itemCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-wine text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow-md animate-in zoom-in-50">
-                  {itemCount}
-                </span>
-              )}
+              <ShoppingBag className="w-4 h-4 text-wine-light" />
+              <span className="hidden sm:inline tracking-wide">Bolsa</span>
+              <span className="bg-wine text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                {itemCount}
+              </span>
             </button>
           </div>
         </div>

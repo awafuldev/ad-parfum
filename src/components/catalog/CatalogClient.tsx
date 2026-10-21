@@ -159,35 +159,35 @@ export function CatalogClient({ initialProducts, brands, categories }: Props) {
     onlyAvailable;
 
   return (
-    <div className="py-12 bg-porcelain">
+    <div className="py-12 bg-ivory">
       <div className="max-w-cowboy mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Breadcrumb & Header */}
-        <div className="pb-8 border-b border-sand/70">
-          <div className="flex items-center gap-2 text-xs text-taupe mb-3">
-            <Link href="/" className="hover:text-espresso transition-colors">
+        <div className="pb-8 border-b border-border">
+          <div className="flex items-center gap-2 text-xs text-gray mb-3">
+            <Link href="/" className="hover:text-noir transition-colors">
               Inicio
             </Link>
             <span>/</span>
-            <span className="text-espresso font-medium">Catálogo A&D Parfum</span>
+            <span className="text-noir font-medium">Catálogo A&amp;D Parfum</span>
           </div>
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-luxury text-champagne font-semibold mb-2">
+              <div className="inline-flex items-center gap-2 text-[10px] sm:text-[11px] uppercase tracking-luxury text-wine font-bold mb-2">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Curaduría Olfativa Completa</span>
               </div>
-              <h1 className="heading-section text-espresso font-editorial">
-                Colección de Fragancias & Decants
+              <h1 className="font-editorial text-3xl sm:text-5xl font-normal text-noir tracking-tight">
+                Colección de Fragancias &amp; Decants
               </h1>
-              <p className="text-xs sm:text-sm text-taupe mt-2 max-w-xl font-light leading-relaxed">
-                Explora el catálogo oficial de A&D Parfum. Selecciona entre muestras fraccionadas (decants en atomizador de cristal) o presentaciones selladas en frascos originales.
+              <p className="text-xs sm:text-sm text-gray mt-2 max-w-xl font-light leading-relaxed">
+                Explora el catálogo oficial de A&amp;D Parfum. Selecciona entre muestras fraccionadas (decants en atomizador de cristal) o presentaciones selladas en frascos originales.
               </p>
             </div>
 
-            <div className="text-xs text-graphite font-medium">
-              Mostrando <strong className="text-espresso font-bold">{filteredProducts.length}</strong> de{" "}
+            <div className="text-xs text-gray font-medium">
+              Mostrando <strong className="text-noir font-bold">{filteredProducts.length}</strong> de{" "}
               {initialProducts.length} fragancias
             </div>
           </div>
@@ -211,7 +211,7 @@ export function CatalogClient({ initialProducts, brands, categories }: Props) {
                   setSelectedCategory(tab.id);
                   updateUrl({ category: tab.id });
                 }}
-                className={`whitespace-nowrap px-4 py-2 rounded-full text-xs font-semibold transition-all ${
+                className={`whitespace-nowrap px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all ${
                   isActive
                     ? "bg-noir text-white shadow-sm"
                     : "bg-white text-gray hover:text-noir border border-border"
@@ -224,10 +224,10 @@ export function CatalogClient({ initialProducts, brands, categories }: Props) {
         </div>
 
         {/* Search, Filter bar & Sort controls */}
-        <div className="py-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-b border-sand/70">
+        <div className="py-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-b border-border">
           {/* Search Input */}
           <div className="relative flex-1 max-w-md">
-            <Search className="w-4 h-4 text-taupe absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-gray absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={search}
@@ -236,7 +236,7 @@ export function CatalogClient({ initialProducts, brands, categories }: Props) {
                 updateUrl({ search: e.target.value });
               }}
               placeholder="Buscar por nombre, casa o notas..."
-              className="w-full pl-10 pr-9 py-2.5 bg-white border border-sand rounded-cowboy text-xs text-espresso placeholder-taupe focus:outline-none focus:border-espresso transition-all shadow-sm"
+              className="w-full pl-10 pr-9 py-2.5 bg-white border border-border rounded-full text-xs text-noir placeholder-gray focus:outline-none focus:border-noir transition-all shadow-2xs"
             />
             {search && (
               <button
@@ -244,7 +244,7 @@ export function CatalogClient({ initialProducts, brands, categories }: Props) {
                   setSearch("");
                   updateUrl({ search: "" });
                 }}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-taupe hover:text-espresso"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray hover:text-noir"
               >
                 <X className="w-3.5 h-3.5" />
               </button>
@@ -255,12 +255,12 @@ export function CatalogClient({ initialProducts, brands, categories }: Props) {
           <div className="flex items-center gap-3">
             <button
               onClick={() => setFilterDrawerOpen(true)}
-              className="btn-secondary text-xs py-2.5 px-4 flex items-center gap-2 lg:hidden"
+              className="bg-white border border-border text-xs py-2.5 px-4 rounded-full text-noir flex items-center gap-2 lg:hidden shadow-2xs"
             >
-              <SlidersHorizontal className="w-3.5 h-3.5 text-champagne" />
+              <SlidersHorizontal className="w-3.5 h-3.5 text-wine" />
               <span>Filtros</span>
               {hasActiveFilters && (
-                <span className="w-2 h-2 rounded-full bg-champagne" />
+                <span className="w-2 h-2 rounded-full bg-wine" />
               )}
             </button>
 
@@ -272,14 +272,14 @@ export function CatalogClient({ initialProducts, brands, categories }: Props) {
                   setSelectedSort(e.target.value);
                   updateUrl({ sort: e.target.value });
                 }}
-                className="appearance-none bg-white hover:bg-sand/20 text-espresso text-xs font-medium py-2.5 pl-4 pr-9 rounded-cowboy border border-sand focus:outline-none focus:border-espresso cursor-pointer shadow-sm"
+                className="appearance-none bg-white hover:bg-ivory text-noir text-xs font-semibold py-2.5 pl-4 pr-9 rounded-full border border-border focus:outline-none focus:border-noir cursor-pointer shadow-2xs"
               >
                 <option value="featured">Destacados</option>
                 <option value="price-asc">Precio: Menor a Mayor</option>
                 <option value="price-desc">Precio: Mayor a Menor</option>
                 <option value="newest">Más Recientes</option>
               </select>
-              <ChevronDown className="w-3.5 h-3.5 text-taupe absolute right-3 pointer-events-none" />
+              <ChevronDown className="w-3.5 h-3.5 text-gray absolute right-3 pointer-events-none" />
             </div>
           </div>
         </div>
