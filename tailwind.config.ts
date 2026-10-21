@@ -74,12 +74,12 @@ const config: Config = {
       },
       fontFamily: {
         serif: [
-          "Cormorant Garamond",
           "Playfair Display",
           "Georgia",
           "serif",
         ],
         sans: [
+          "Plus Jakarta Sans",
           "Inter",
           "-apple-system",
           "BlinkMacSystemFont",

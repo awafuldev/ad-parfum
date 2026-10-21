@@ -55,7 +55,7 @@ export default function CartPage() {
           {freeShippingProgress.isFree ? (
             <p className="text-espresso font-medium flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-champagne inline-block animate-pulse" />
-              <span>✨ ¡Felicidades! Tu orden cuenta con <strong>Envío Gratis Nacional</strong> en Colombia.</span>
+              <span>✨ ¡Felicidades! Tu orden cuenta con <strong>Envío Gratis</strong> en República Dominicana.</span>
             </p>
           ) : (
             <div>
@@ -158,7 +158,7 @@ export default function CartPage() {
                   <span className="font-semibold text-espresso">{formatPrice(subtotal)}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Envío a toda Colombia</span>
+                  <span>Envío República Dominicana</span>
                   <span>
                     {freeShippingProgress.isFree ? (
                       <span className="text-emerald-700 font-semibold">Gratis</span>

@@ -812,7 +812,7 @@ export function AdminDashboardClient({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="font-semibold text-charcoal block mb-1 uppercase text-[10px]">
-                    Número de WhatsApp Oficial (Con código país ej. 573001234567)
+                    Número de WhatsApp Oficial (ej. 18091234567 o 18291234567)
                   </label>
                   <input
                     type="text"

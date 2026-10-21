@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
       customer_phone: body.customer_phone,
       shipping_address: body.shipping_address,
       shipping_city: body.shipping_city,
-      shipping_department: body.shipping_department || "Colombia",
+      shipping_department: body.shipping_department || "República Dominicana",
       delivery_notes: body.delivery_notes,
       shipping_method: body.shipping_method || "standard",
       payment_method: body.payment_method || "contra_entrega",

@@ -143,9 +143,20 @@ export function HomeInventory({ products, categories = [] }: Props) {
             </h2>
           </div>
 
-          <p className="text-xs sm:text-sm text-gray font-light max-w-md">
-            Muestras fraccionadas en atomizadores de cristal y presentaciones completas selladas de fábrica con garantía de origen.
-          </p>
+          <div className="space-y-2 text-right md:text-right">
+            <p className="text-xs sm:text-sm text-gray font-light max-w-md">
+              Muestras fraccionadas en atomizadores de cristal y presentaciones completas selladas de fábrica con garantía de origen.
+            </p>
+            <div className="flex items-center md:justify-end gap-2 text-[11px] text-noir font-medium">
+              <span className="inline-flex items-center gap-1 bg-white px-2.5 py-1 rounded-full border border-border shadow-2xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                <span>+100 Clientes en RD</span>
+              </span>
+              <span className="inline-flex items-center gap-1 bg-white px-2.5 py-1 rounded-full border border-border shadow-2xs">
+                <span>🚚 Envíos a todo el país</span>
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* Discrete Filters & Search Toolbar */}

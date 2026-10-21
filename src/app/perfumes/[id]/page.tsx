@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${product.name} — ${product.brand_name} | A&D Parfum`,
-    description: `${product.short_description} Disponible en decants de 5ml, 10ml y presentación completa en A&D Parfum Colombia.`,
+    description: `${product.short_description} Disponible en decants de 5ml, 10ml y presentación completa en A&D Parfum en República Dominicana.`,
     openGraph: {
       title: `${product.name} (${product.brand_name}) — A&D Parfum`,
       description: product.short_description,

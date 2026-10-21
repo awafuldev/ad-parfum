@@ -50,16 +50,26 @@ export function Hero() {
               Decants genuinos fraccionados bajo pedido en atomizadores de cristal y botellas selladas. La curaduría definitiva de perfumería árabe y de nicho.
             </p>
 
-            {/* Single Primary Call-to-Action */}
-            <div className="pt-2">
+            {/* Single Primary Call-to-Action & Business Badges */}
+            <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
               <Link
                 href="#inventario"
                 onClick={scrollToInventory}
-                className="inline-flex items-center gap-2.5 bg-white text-noir hover:bg-wine hover:text-white px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all duration-300 shadow-xl group cursor-pointer"
+                className="inline-flex items-center justify-center gap-2.5 bg-white text-noir hover:bg-wine hover:text-white px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all duration-300 shadow-xl group cursor-pointer w-fit"
               >
                 <span>Explorar perfumes</span>
                 <ArrowDown className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5" />
               </Link>
+
+              {/* Commercial Metrics Badge */}
+              <div className="flex items-center gap-3 text-xs text-white/80 font-medium">
+                <span className="flex items-center gap-1.5 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>+100 Clientes en RD</span>
+                </span>
+                <span className="text-white/40">•</span>
+                <span className="text-white/70">Envíos a todo el país</span>
+              </div>
             </div>
 
           </div>

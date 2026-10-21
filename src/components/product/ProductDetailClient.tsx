@@ -471,8 +471,8 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
                   className="w-full flex items-center justify-between text-left font-medium text-espresso"
                 >
                   <span className="flex items-center gap-2">
-                    <Truck className="w-4 h-4 text-champagne" />
-                    <span className="font-editorial text-lg">Envíos Colombia & Medios de Pago</span>
+                    <Truck className="w-4 h-4 text-wine" />
+                    <span className="font-editorial text-lg">Envíos en República Dominicana &amp; Medios de Pago</span>
                   </span>
                   <ChevronDown
                     className={`w-4 h-4 text-taupe transition-transform duration-300 ${
@@ -484,13 +484,13 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
                 {openAccordion === "shipping" && (
                   <div className="pt-3 text-smoke leading-relaxed space-y-2 font-light animate-in fade-in duration-300">
                     <p>
-                      • <strong>Cobertura Nacional:</strong> Despachos por transportadora oficial con número de guía inmediato (2 a 4 días hábiles).
+                      • <strong>Cobertura en Todo RD:</strong> Entregas en Santo Domingo, Santiago, La Romana, Punta Cana y todas las provincias del país con guía de rastreo.
                     </p>
                     <p>
-                      • <strong>Envío Gratis:</strong> Automático en pedidos superiores a $200.000 COP.
+                      • <strong>Empaque de Pureza:</strong> Atomizadores de cristal neutro herméticamente sellados para conservar intacta la pirámide aromática.
                     </p>
                     <p>
-                      • <strong>Métodos de Pago:</strong> Pago Contra Entrega en efectivo al recibir, Transferencia Bancolombia / Nequi o tarjeta de crédito en pasarela segura.
+                      • <strong>Métodos de Pago:</strong> Pago Contra Entrega al recibir, Transferencia Bancaria Directa (Banreservas, Banco BHD, Banco Popular) o tarjeta de crédito mediante enlace de pago oficial coordinado por WhatsApp.
                     </p>
                   </div>
                 )}
