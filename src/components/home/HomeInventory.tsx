@@ -526,12 +526,9 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
                       </div>
 
                       {/* Action Bar with Prominent Buy Button */}
-                      <div className="pt-2 flex items-center justify-between gap-3">
-                        <div>
-                          <span className="block text-[10px] text-gray uppercase tracking-wider font-medium">
-                            Total
-                          </span>
-                          <span className="font-price text-xl sm:text-2xl font-bold text-noir leading-none tracking-tight">
+                      <div className="pt-3 border-t border-border flex items-center justify-between gap-3">
+                        <div className="flex-shrink-0 flex items-center">
+                          <span className="font-price text-xl sm:text-2xl font-bold text-noir tracking-tight leading-none">
                             {formatPrice(activeVariant?.price || product.base_price)}
                           </span>
                         </div>
@@ -541,9 +538,9 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
                           type="button"
                           onClick={(e) => handleQuickAdd(product, e)}
                           disabled={!isAvailable}
-                          className={`flex-1 py-3 px-4 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 shadow-xs ${
+                          className={`flex-1 h-11 px-4 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 shadow-xs ${
                             isAdded
-                              ? "bg-emerald-600 text-white scale-102"
+                              ? "bg-emerald-600 text-white"
                               : isAvailable
                               ? "bg-noir text-white hover:bg-wine active:scale-98"
                               : "bg-gray/20 text-gray cursor-not-allowed"

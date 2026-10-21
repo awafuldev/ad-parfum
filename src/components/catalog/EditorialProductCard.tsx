@@ -145,9 +145,8 @@ export function EditorialProductCard({ product, featuredSpotlight = false }: Pro
 
             {/* Price & Add to Cart Action */}
             <div className="pt-6 border-t border-border flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div>
-                <span className="text-[10px] text-gray block uppercase font-bold tracking-luxury">Total Formato</span>
-                <span className="font-price text-2xl sm:text-3xl font-bold text-noir tracking-tight">
+              <div className="flex-shrink-0 flex items-center">
+                <span className="font-price text-2xl sm:text-3xl font-bold text-noir tracking-tight leading-none">
                   {formatPrice(selectedVariant.price)}
                 </span>
               </div>
@@ -155,7 +154,7 @@ export function EditorialProductCard({ product, featuredSpotlight = false }: Pro
               <div className="flex items-center gap-3">
                 <Link
                   href={`/perfumes/${product.id}`}
-                  className="px-5 py-3 rounded-full border border-border text-xs font-semibold text-noir hover:bg-ivory hover:border-noir transition-colors"
+                  className="h-11 px-5 rounded-full border border-border text-xs font-semibold text-noir hover:bg-ivory hover:border-noir transition-colors flex items-center justify-center"
                 >
                   <span>Ver Detalles</span>
                 </Link>
@@ -164,7 +163,7 @@ export function EditorialProductCard({ product, featuredSpotlight = false }: Pro
                   type="button"
                   onClick={handleAddToCart}
                   disabled={!selectedVariant.is_available}
-                  className={`py-3 px-7 rounded-full text-xs font-semibold tracking-wide flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer ${
+                  className={`h-11 px-7 rounded-full text-xs font-semibold tracking-wide flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer ${
                     addedAnimation
                       ? "bg-emerald-600 text-white"
                       : "bg-noir text-white hover:bg-wine active:scale-98"
@@ -307,8 +306,7 @@ export function EditorialProductCard({ product, featuredSpotlight = false }: Pro
 
       {/* Card Footer: Live Selected Price & Add Action */}
       <div className="px-5 sm:px-6 pb-5 pt-3 border-t border-border flex items-center justify-between gap-3 mt-auto">
-        <div>
-          <span className="text-[10px] text-gray block uppercase font-bold tracking-wider">Total</span>
+        <div className="flex-shrink-0 flex items-center">
           <span className="font-price text-xl sm:text-2xl font-bold text-noir leading-none tracking-tight">
             {formatPrice(selectedVariant.price)}
           </span>
@@ -318,7 +316,7 @@ export function EditorialProductCard({ product, featuredSpotlight = false }: Pro
           type="button"
           onClick={handleAddToCart}
           disabled={!selectedVariant.is_available}
-          className={`flex-1 py-3 px-4 rounded-full text-xs font-semibold tracking-wide flex items-center justify-center gap-2 transition-all shadow-xs cursor-pointer ${
+          className={`flex-1 h-11 px-4 rounded-full text-xs font-semibold tracking-wide flex items-center justify-center gap-2 transition-all shadow-xs cursor-pointer ${
             addedAnimation
               ? "bg-emerald-600 text-white"
               : selectedVariant.is_available

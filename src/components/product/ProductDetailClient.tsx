@@ -362,7 +362,7 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
 
             {/* Dynamic Price Display */}
             <div className="bg-sand/15 p-4 sm:p-5 rounded-2xl border border-sand/70 space-y-4">
-              <div className="flex items-baseline justify-between gap-3">
+              <div className="flex items-center justify-between gap-3">
                 <div className="flex items-baseline gap-3">
                   <span className="font-price text-3xl sm:text-4xl font-extrabold text-espresso tracking-tight">
                     {formatPrice(selectedVariant.price)}
