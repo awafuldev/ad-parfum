@@ -183,11 +183,11 @@ export function CartDrawer() {
                       </div>
 
                       <div className="text-right">
-                        <p className="text-xs font-bold text-espresso">
+                        <p className="font-price text-xs font-bold text-espresso">
                           {formatPrice(item.unit_price * item.quantity)}
                         </p>
                         {item.quantity > 1 && (
-                          <p className="text-[10px] text-taupe font-light">
+                          <p className="font-price text-[10px] text-taupe font-normal">
                             {formatPrice(item.unit_price)} c/u
                           </p>
                         )}
@@ -205,7 +205,7 @@ export function CartDrawer() {
               <div className="space-y-1.5 text-xs text-graphite">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span className="text-espresso font-semibold">{formatPrice(subtotal)}</span>
+                  <span className="font-price text-espresso font-semibold">{formatPrice(subtotal)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Envío estimado (República Dominicana)</span>
@@ -221,7 +221,7 @@ export function CartDrawer() {
 
               <div className="pt-2 border-t border-sand flex justify-between items-baseline">
                 <span className="text-sm font-medium text-espresso">Total Estimado</span>
-                <span className="text-xl font-bold text-espresso">
+                <span className="font-price text-xl font-bold text-espresso">
                   {formatPrice(subtotal)}
                 </span>
               </div>

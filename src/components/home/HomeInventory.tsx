@@ -531,7 +531,7 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
                           <span className="block text-[10px] text-gray uppercase tracking-wider font-medium">
                             Total
                           </span>
-                          <span className="font-editorial text-2xl font-bold text-noir leading-none">
+                          <span className="font-price text-xl sm:text-2xl font-bold text-noir leading-none tracking-tight">
                             {formatPrice(activeVariant?.price || product.base_price)}
                           </span>
                         </div>
@@ -663,7 +663,7 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
                       <span className="text-xs font-semibold text-gray uppercase tracking-wider">
                         Selecciona el tamaño:
                       </span>
-                      <span className="font-editorial text-2xl font-bold text-noir">
+                      <span className="font-price text-2xl font-bold text-noir tracking-tight">
                         {formatPrice(
                           (cardSelectedVariants[quickViewProduct.id] || quickViewProduct.variants[0])?.price
                         )}

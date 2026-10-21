@@ -84,7 +84,7 @@ export default async function OrderConfirmationPage({ params }: Props) {
             </div>
             <p className="text-xs text-smoke leading-relaxed font-light">
               Por favor realiza tu transferencia por el valor exacto de{" "}
-              <strong className="text-espresso font-bold">{formatPrice(order.total)}</strong>.
+              <strong className="font-price text-espresso font-bold">{formatPrice(order.total)}</strong>.
             </p>
             <div className="p-4 rounded-cowboy bg-sand/15 border border-champagne/30 text-xs space-y-2">
               <p className="font-semibold text-espresso">📲 Datos de cuenta bancaria (República Dominicana)</p>
@@ -172,8 +172,8 @@ export default async function OrderConfirmationPage({ params }: Props) {
                 </div>
 
                 <div className="text-right">
-                  <p className="text-xs font-bold text-espresso">{formatPrice(item.total_price)}</p>
-                  <p className="text-[10px] text-taupe font-light">{formatPrice(item.unit_price)} c/u</p>
+                  <p className="font-price text-xs font-bold text-espresso">{formatPrice(item.total_price)}</p>
+                  <p className="font-price text-[10px] text-taupe font-normal">{formatPrice(item.unit_price)} c/u</p>
                 </div>
               </div>
             ))}
@@ -183,17 +183,17 @@ export default async function OrderConfirmationPage({ params }: Props) {
           <div className="pt-4 border-t border-sand space-y-2 text-xs text-graphite">
             <div className="flex justify-between">
               <span>Subtotal</span>
-              <span className="font-semibold text-espresso">{formatPrice(order.subtotal)}</span>
+              <span className="font-price font-semibold text-espresso">{formatPrice(order.subtotal)}</span>
             </div>
             <div className="flex justify-between">
               <span>Costo de Despacho</span>
-              <span className="font-semibold text-espresso">
+              <span className="font-price font-semibold text-espresso">
                 {order.shipping_fee === 0 ? "Gratis" : formatPrice(order.shipping_fee)}
               </span>
             </div>
             <div className="pt-2 border-t border-sand flex justify-between items-baseline">
               <span className="text-sm font-semibold text-espresso">Total Liquidado</span>
-              <span className="text-2xl font-bold text-espresso">{formatPrice(order.total)}</span>
+              <span className="font-price text-2xl font-bold text-espresso">{formatPrice(order.total)}</span>
             </div>
           </div>
 

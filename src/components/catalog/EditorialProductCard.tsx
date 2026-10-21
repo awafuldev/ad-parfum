@@ -147,7 +147,7 @@ export function EditorialProductCard({ product, featuredSpotlight = false }: Pro
             <div className="pt-6 border-t border-border flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
                 <span className="text-[10px] text-gray block uppercase font-bold tracking-luxury">Total Formato</span>
-                <span className="font-editorial text-3xl font-bold text-noir">
+                <span className="font-price text-2xl sm:text-3xl font-bold text-noir tracking-tight">
                   {formatPrice(selectedVariant.price)}
                 </span>
               </div>
@@ -309,7 +309,7 @@ export function EditorialProductCard({ product, featuredSpotlight = false }: Pro
       <div className="px-5 sm:px-6 pb-5 pt-3 border-t border-border flex items-center justify-between gap-3 mt-auto">
         <div>
           <span className="text-[10px] text-gray block uppercase font-bold tracking-wider">Total</span>
-          <span className="font-editorial text-2xl font-bold text-noir leading-none">
+          <span className="font-price text-xl sm:text-2xl font-bold text-noir leading-none tracking-tight">
             {formatPrice(selectedVariant.price)}
           </span>
         </div>

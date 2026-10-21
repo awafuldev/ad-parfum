@@ -58,13 +58,13 @@ export function Navbar() {
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? "bg-noir/95 backdrop-blur-md border-b border-white/10 shadow-lg py-2.5"
-            : "bg-noir border-b border-white/10 py-3.5"
+            ? "bg-noir/95 backdrop-blur-md border-b border-white/10 shadow-xl py-3"
+            : "bg-noir border-b border-white/10 py-4"
         }`}
       >
-        <div className="max-w-cowboy mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="max-w-cowboy mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
           
-          {/* Left: Mobile Toggle & Desktop Quick Navigation */}
+          {/* Left: Mobile Toggle & Desktop Editorial Navigation */}
           <div className="flex items-center gap-6">
             <button
               onClick={() => setMobileMenuOpen(true)}
@@ -74,20 +74,20 @@ export function Navbar() {
               <Menu className="w-5 h-5" />
             </button>
 
-            <nav className="hidden md:flex items-center gap-6 text-[13px] tracking-wide font-medium text-white/80">
+            <nav className="hidden md:flex items-center gap-7 text-[12px] uppercase tracking-[0.18em] font-medium text-white/70">
               <Link
                 href="/#inventario"
                 onClick={handlePerfumesClick}
-                className="hover:text-white transition-colors flex items-center gap-1.5"
+                className="hover:text-white transition-colors flex items-center gap-1.5 group py-1"
               >
-                <span>Perfumes</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-wine" />
+                <span>Colección</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-wine opacity-80 group-hover:opacity-100 group-hover:scale-125 transition-all" />
               </Link>
               <Link
                 href="/perfumes"
-                className="hover:text-white transition-colors text-white/70"
+                className="hover:text-white transition-colors py-1 hover:border-b hover:border-wine/60"
               >
-                Catálogo Completo
+                Catálogo
               </Link>
             </nav>
           </div>
@@ -99,25 +99,62 @@ export function Navbar() {
               <img
                 src="/images/logo-light.png"
                 alt="A&D Parfum"
-                className="h-9 sm:h-11 w-auto object-contain filter drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]"
+                className="h-9 sm:h-11 w-auto object-contain filter drop-shadow-[0_2px_14px_rgba(0,0,0,0.6)]"
               />
             </Link>
           </div>
 
-          {/* Right: Search, Admin, Cart */}
-          <div className="flex items-center gap-2 sm:gap-4">
+          {/* Right: Integrated Desktop Search, Concierge, Admin & Shopping Bag */}
+          <div className="flex items-center gap-3 sm:gap-4">
+            {/* Desktop Inline Search Bar */}
+            <form
+              onSubmit={handleSearchSubmit}
+              className="relative hidden md:flex items-center group"
+            >
+              <Search className="w-3.5 h-3.5 text-white/40 absolute left-3 pointer-events-none group-focus-within:text-white/80 transition-colors" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Buscar perfume, casa o nota..."
+                className="w-48 lg:w-60 focus:w-72 transition-all duration-300 bg-white/[0.07] hover:bg-white/[0.11] focus:bg-white/[0.15] border border-white/10 focus:border-wine/70 rounded-full py-1.5 pl-8.5 pr-7 text-xs text-white placeholder:text-white/40 focus:outline-none"
+              />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-2.5 text-white/40 hover:text-white p-0.5"
+                >
+                  <X className="w-3 h-3" />
+                </button>
+              )}
+            </form>
+
+            {/* Mobile Search Icon */}
             <button
               onClick={() => setSearchOpen(true)}
-              className="p-2 text-white/80 hover:text-white rounded-full hover:bg-white/10 transition-colors"
+              className="md:hidden p-2 text-white/80 hover:text-white rounded-full hover:bg-white/10 transition-colors"
               aria-label="Buscar fragancias"
-              title="Buscar en el catálogo"
             >
               <Search className="w-4 h-4" />
             </button>
 
+            {/* WhatsApp VIP Concierge Pill (Desktop) */}
+            <a
+              href="https://wa.me/18293751717?text=Hola%20A%26D%20Parfum,%20deseo%20asesor%C3%ADa%20personalizada%20sobre%20una%20fragancia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 text-[11px] text-white/80 hover:text-white transition-all shadow-xs"
+              title="Atención directa por WhatsApp en República Dominicana"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="tracking-wide">Asesoría RD</span>
+            </a>
+
+            {/* Admin Link */}
             <Link
               href="/admin"
-              className="hidden sm:inline-flex text-[11px] uppercase tracking-wider font-semibold text-white/50 hover:text-white px-2 py-1 rounded transition-colors"
+              className="hidden sm:inline-flex text-[10px] uppercase tracking-luxury font-semibold text-white/40 hover:text-white px-2 py-1 rounded transition-colors"
             >
               Admin
             </Link>
@@ -125,12 +162,12 @@ export function Navbar() {
             {/* Shopping Bag Boutique Button */}
             <button
               onClick={openCart}
-              className="relative py-2 px-3 sm:px-4 rounded-full bg-white/10 hover:bg-white/15 border border-white/15 text-white transition-all flex items-center gap-2 text-xs font-semibold cursor-pointer shadow-sm active:scale-95"
+              className="relative py-2 px-3.5 sm:px-4 rounded-full bg-white/10 hover:bg-white/15 border border-white/15 hover:border-wine/60 text-white transition-all flex items-center gap-2 text-xs font-semibold cursor-pointer shadow-sm active:scale-95 group"
               aria-label="Bolsa de compra"
             >
-              <ShoppingBag className="w-4 h-4 text-wine-light" />
+              <ShoppingBag className="w-4 h-4 text-wine-light transition-transform group-hover:scale-105" />
               <span className="hidden sm:inline tracking-wide">Bolsa</span>
-              <span className="bg-wine text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+              <span className="font-price bg-wine text-white text-[10px] font-bold min-w-[18px] h-[18px] px-1 rounded-full flex items-center justify-center">
                 {itemCount}
               </span>
             </button>

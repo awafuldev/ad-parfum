@@ -161,7 +161,7 @@ export function BestsellersShowcase({ products }: Props) {
                   <div className="pt-4 border-t border-sand/70 flex items-center justify-between">
                     <div>
                       <span className="text-[10px] text-taupe uppercase block">Decants Desde</span>
-                      <span className="text-xl font-bold text-espresso">
+                      <span className="font-price text-xl font-bold text-espresso">
                         {formatPrice(Math.min(...heroProduct.variants.map((v) => v.price)))}
                       </span>
                     </div>
@@ -273,7 +273,7 @@ export function BestsellersShowcase({ products }: Props) {
                   <div className="p-6 pt-0 border-t border-sand/60 mt-2 flex items-center justify-between">
                     <div>
                       <span className="text-[10px] text-taupe uppercase block">Desde</span>
-                      <span className="text-base font-bold text-espresso">
+                      <span className="font-price text-base font-bold text-espresso">
                         {formatPrice(minPrice)}
                       </span>
                     </div>

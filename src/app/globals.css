@@ -71,6 +71,14 @@
   letter-spacing: -0.015em;
 }
 
+/* Modern Clean Price & Numerical Typography (Lining Numbers, No Old-Style Descenders) */
+.font-price {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  letter-spacing: -0.02em;
+}
+
 .heading-hero {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: clamp(2.5rem, 5.5vw, 5.2rem);

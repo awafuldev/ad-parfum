@@ -415,7 +415,7 @@ export function OlfactoryExplorer({ products }: Props) {
                     <div className="p-5 pt-0 border-t border-sand/15 mt-3 flex items-center justify-between text-xs">
                       <div>
                         <span className="text-[10px] text-sand/60 block uppercase">Decants Desde</span>
-                        <span className="text-sm font-semibold text-champagne">
+                        <span className="font-price text-sm font-semibold text-champagne">
                           {formatPrice(minPrice)}
                         </span>
                       </div>

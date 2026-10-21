@@ -545,7 +545,7 @@ export default function CheckoutPage() {
                         <p className="text-xs font-semibold text-espresso truncate">{item.product_name}</p>
                         <p className="text-[11px] text-smoke font-light">{item.variant_name} x {item.quantity}</p>
                       </div>
-                      <span className="text-xs font-bold text-espresso">
+                      <span className="font-price text-xs font-bold text-espresso">
                         {formatPrice(item.unit_price * item.quantity)}
                       </span>
                     </div>
@@ -556,11 +556,11 @@ export default function CheckoutPage() {
                 <div className="space-y-2 pt-2 border-t border-sand text-xs text-graphite">
                   <div className="flex justify-between">
                     <span>Subtotal</span>
-                    <span className="text-espresso font-semibold">{formatPrice(subtotal)}</span>
+                    <span className="font-price text-espresso font-semibold">{formatPrice(subtotal)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Envío</span>
-                    <span className="text-espresso font-semibold">
+                    <span className="font-price text-espresso font-semibold">
                       {shippingFee === 0 ? "A coordinar" : formatPrice(shippingFee)}
                     </span>
                   </div>
@@ -572,7 +572,7 @@ export default function CheckoutPage() {
 
                 <div className="pt-3 border-t border-sand flex justify-between items-baseline">
                   <span className="text-base font-medium text-espresso">Total del Pedido</span>
-                  <span className="text-2xl font-bold text-espresso">
+                  <span className="font-price text-2xl font-bold text-espresso">
                     {formatPrice(grandTotal)}
                   </span>
                 </div>

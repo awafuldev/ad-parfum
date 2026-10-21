@@ -95,7 +95,7 @@ export default function CartPage() {
                     <span className="text-[10px] uppercase font-semibold tracking-luxury text-taupe">{item.brand_name}</span>
                     <h3 className="font-editorial text-xl font-normal text-espresso">{item.product_name}</h3>
                     <p className="text-xs text-smoke font-light">{item.variant_name}</p>
-                    <p className="text-xs font-bold text-espresso mt-1 sm:hidden">
+                    <p className="font-price text-xs font-bold text-espresso mt-1 sm:hidden">
                       {formatPrice(item.unit_price * item.quantity)}
                     </p>
                   </div>
@@ -125,10 +125,10 @@ export default function CartPage() {
                   </div>
 
                   <div className="text-right hidden sm:block w-28">
-                    <p className="text-sm font-bold text-espresso">
+                    <p className="font-price text-sm font-bold text-espresso">
                       {formatPrice(item.unit_price * item.quantity)}
                     </p>
-                    <p className="text-[10px] text-taupe font-light">
+                    <p className="font-price text-[10px] text-taupe font-normal">
                       {formatPrice(item.unit_price)} c/u
                     </p>
                   </div>
@@ -155,7 +155,7 @@ export default function CartPage() {
               <div className="space-y-2 text-xs text-graphite">
                 <div className="flex justify-between">
                   <span>Subtotal ({itemCount} productos)</span>
-                  <span className="font-semibold text-espresso">{formatPrice(subtotal)}</span>
+                  <span className="font-price font-semibold text-espresso">{formatPrice(subtotal)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Envío República Dominicana</span>
@@ -171,7 +171,7 @@ export default function CartPage() {
 
               <div className="pt-3 border-t border-sand flex justify-between items-baseline">
                 <span className="text-sm font-medium text-espresso">Total Estimado</span>
-                <span className="text-2xl font-bold text-espresso">{formatPrice(subtotal)}</span>
+                <span className="font-price text-2xl font-bold text-espresso">{formatPrice(subtotal)}</span>
               </div>
 
               <Link

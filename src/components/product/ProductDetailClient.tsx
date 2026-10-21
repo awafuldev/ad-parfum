@@ -364,11 +364,11 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
             <div className="bg-sand/15 p-4 sm:p-5 rounded-2xl border border-sand/70 space-y-4">
               <div className="flex items-baseline justify-between gap-3">
                 <div className="flex items-baseline gap-3">
-                  <span className="text-3xl sm:text-4xl font-extrabold text-espresso tracking-tight">
+                  <span className="font-price text-3xl sm:text-4xl font-extrabold text-espresso tracking-tight">
                     {formatPrice(selectedVariant.price)}
                   </span>
                   {selectedVariant.compare_at_price && (
-                    <span className="text-base text-taupe line-through">
+                    <span className="font-price text-base text-taupe line-through">
                       {formatPrice(selectedVariant.compare_at_price)}
                     </span>
                   )}
@@ -436,11 +436,11 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
                         </div>
 
                         <div className="text-right flex-shrink-0">
-                          <span className="text-xs sm:text-sm font-bold text-espresso block">
+                          <span className="font-price text-xs sm:text-sm font-bold text-espresso block">
                             {formatPrice(v.price)}
                           </span>
                           {v.compare_at_price && (
-                            <span className="text-[10px] text-taupe line-through block">
+                            <span className="font-price text-[10px] text-taupe line-through block">
                               {formatPrice(v.compare_at_price)}
                             </span>
                           )}
@@ -749,7 +749,7 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
                       <h4 className="font-editorial text-base sm:text-lg font-medium text-espresso group-hover:text-wine transition-colors line-clamp-1">
                         {rel.name}
                       </h4>
-                      <p className="text-xs sm:text-sm font-bold text-espresso">
+                      <p className="font-price text-xs sm:text-sm font-bold text-espresso">
                         Desde {formatPrice(minPrice)}
                       </p>
                     </div>
@@ -779,7 +779,7 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
                 {product.name}
               </p>
               <p className="text-[11px] text-taupe truncate">
-                {getVariantLabel(selectedVariant)} • <strong className="text-espresso">{formatPrice(selectedVariant.price * quantity)}</strong>
+                {getVariantLabel(selectedVariant)} • <strong className="font-price text-espresso">{formatPrice(selectedVariant.price * quantity)}</strong>
               </p>
             </div>
           </div>

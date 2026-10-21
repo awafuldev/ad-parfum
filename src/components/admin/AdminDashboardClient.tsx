@@ -367,7 +367,7 @@ export function AdminDashboardClient({
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="bg-white p-6 rounded-cowboy border border-hairline shadow-sm">
                 <span className="text-xs uppercase font-semibold text-ash">Ventas Totales</span>
-                <p className="font-editorial text-2xl sm:text-3xl font-medium text-charcoal mt-2">
+                <p className="font-price text-2xl sm:text-3xl font-bold text-charcoal mt-2">
                   {formatPrice(totalSales)}
                 </p>
                 <p className="text-[11px] text-smoke mt-1">Calculado sobre órdenes válidas</p>
@@ -375,7 +375,7 @@ export function AdminDashboardClient({
 
               <div className="bg-white p-6 rounded-cowboy border border-hairline shadow-sm">
                 <span className="text-xs uppercase font-semibold text-ash">Pedidos Totales</span>
-                <p className="font-editorial text-2xl sm:text-3xl font-medium text-charcoal mt-2">
+                <p className="font-price text-2xl sm:text-3xl font-bold text-charcoal mt-2">
                   {orders.length}
                 </p>
                 <p className="text-[11px] text-smoke mt-1">{pendingOrders.length} pendientes de despacho</p>
@@ -383,7 +383,7 @@ export function AdminDashboardClient({
 
               <div className="bg-white p-6 rounded-cowboy border border-hairline shadow-sm">
                 <span className="text-xs uppercase font-semibold text-ash">Perfumes Activos</span>
-                <p className="font-editorial text-2xl sm:text-3xl font-medium text-charcoal mt-2">
+                <p className="font-price text-2xl sm:text-3xl font-bold text-charcoal mt-2">
                   {products.filter((p) => p.is_active).length}
                 </p>
                 <p className="text-[11px] text-smoke mt-1">{products.length} registrados en catálogo</p>
@@ -391,7 +391,7 @@ export function AdminDashboardClient({
 
               <div className="bg-white p-6 rounded-cowboy border border-hairline shadow-sm">
                 <span className="text-xs uppercase font-semibold text-ash">Alertas de Bajo Stock</span>
-                <p className="font-editorial text-2xl sm:text-3xl font-medium text-charcoal mt-2">
+                <p className="font-price text-2xl sm:text-3xl font-bold text-charcoal mt-2">
                   {lowStockVariants.length}
                 </p>
                 <p className="text-[11px] text-smoke mt-1">Formatos con ≤ 5 unidades</p>
