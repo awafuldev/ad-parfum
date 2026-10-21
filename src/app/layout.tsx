@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
-import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Navbar } from "@/components/layout/Navbar";
 import { CartDrawer } from "@/components/cart/CartDrawer";
 import { Footer } from "@/components/layout/Footer";
@@ -40,9 +39,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="min-h-screen flex flex-col bg-porcelain text-espresso selection:bg-espresso selection:text-champagne antialiased">
+      <body className="min-h-screen flex flex-col bg-ivory text-noir antialiased selection:bg-wine selection:text-white">
         <CartProvider>
-          <AnnouncementBar />
           <Navbar />
           <main className="flex-1">{children}</main>
           <CartDrawer />

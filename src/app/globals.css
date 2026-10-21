@@ -5,55 +5,64 @@
 @tailwind utilities;
 
 :root {
-  --color-porcelain: #FAF9F6;
-  --color-porcelain-warm: #F5F3EF;
-  --color-espresso: #211A18;
-  --color-espresso-deep: #140F0E;
-  --color-charcoal: #292524;
-  --color-champagne: #CCA727;
-  --color-champagne-light: #E2C358;
-  --color-champagne-muted: #C6AD83;
-  --color-amber-warm: #8D5B28;
-  --color-sand: #E8E0D5;
-  --color-taupe: #8B8076;
-  --color-smoke: #737373;
-  --color-ash: #A3A3A3;
-  --color-mist: #F3F4F6;
-  --color-hairline: #E5E7EB;
+  /* Contemporary Luxury Palette */
+  --color-noir: #111111;
+  --color-ivory: #F7F6F2;
+  --color-wine: #641E32;
+  --color-wine-hover: #7B243D;
+  --color-white: #FFFFFF;
+  --color-gray: #777777;
+  --color-border: #E2E0D8;
+
+  /* Backward Compatibility */
+  --color-porcelain: #F7F6F2;
+  --color-porcelain-warm: #FBFBF9;
+  --color-espresso: #111111;
+  --color-espresso-deep: #0A0A0A;
+  --color-charcoal: #1A1A1A;
+  --color-champagne: #641E32;
+  --color-champagne-light: #7B243D;
+  --color-champagne-muted: #8C2E49;
+  --color-sand: #E5E3DC;
+  --color-taupe: #777777;
+  --color-smoke: #666666;
+  --color-ash: #888888;
+  --color-mist: #F2F0EB;
+  --color-hairline: #E2E0D8;
   --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-editorial: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 @layer base {
   * {
-    border-color: #E8E0D5;
+    border-color: #E2E0D8;
   }
   
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #FAF9F6;
+    background-color: #F7F6F2;
     text-rendering: optimizeLegibility;
   }
   
   body {
-    background-color: #FAF9F6;
-    color: #211A18;
+    background-color: #F7F6F2;
+    color: #111111;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.5;
     overflow-x: hidden;
   }
 
   ::selection {
-    background-color: #211A18;
-    color: #CCA727;
+    background-color: #641E32;
+    color: #FFFFFF;
   }
 }
 
 /* Subtle editorial film grain texture for luxury depth */
 .grain-overlay {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E");
 }
 
 /* Luxury Editorial Typography */
@@ -64,54 +73,54 @@
 
 .heading-hero {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(2.8rem, 6.5vw, 6.2rem);
+  font-size: clamp(2.6rem, 5.8vw, 5.5rem);
   font-weight: 400;
   letter-spacing: -0.03em;
-  line-height: 0.94;
+  line-height: 0.96;
 }
 
 .heading-section {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
   font-weight: 400;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   line-height: 1.05;
 }
 
 .heading-card {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
   font-weight: 500;
   letter-spacing: -0.015em;
   line-height: 1.2;
 }
 
-/* A&D Parfum Buttons & Micro-Interactions */
+/* A&D Parfum Contemporary Luxury Buttons */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: #211A18;
-  color: #FAF9F6;
+  background-color: #111111;
+  color: #FFFFFF;
   border-radius: 9999px;
   padding: 0.85rem 1.85rem;
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
   cursor: pointer;
-  border: 1px solid #211A18;
+  border: 1px solid #111111;
   position: relative;
   overflow: hidden;
 }
 
 .btn-primary:hover {
-  background-color: #2A2220;
-  border-color: #CCA727;
-  color: #CCA727;
-  box-shadow: 0 4px 20px rgba(33, 26, 24, 0.25);
+  background-color: #641E32;
+  border-color: #641E32;
+  color: #FFFFFF;
+  box-shadow: 0 4px 20px rgba(100, 30, 50, 0.3);
 }
 
 .btn-primary:active {
@@ -124,97 +133,101 @@
   justify-content: center;
   gap: 0.5rem;
   background-color: transparent;
-  color: #211A18;
-  border: 1px solid #211A18;
+  color: #111111;
+  border: 1px solid #111111;
   border-radius: 9999px;
   padding: 0.85rem 1.85rem;
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
   cursor: pointer;
 }
 
 .btn-secondary:hover {
-  background-color: #E8E0D5;
-  border-color: #CCA727;
-  color: #211A18;
+  background-color: #111111;
+  border-color: #111111;
+  color: #FFFFFF;
 }
 
 .btn-secondary:active {
   transform: scale(0.98);
 }
 
-.btn-gold {
+.btn-wine {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #CCA727 0%, #E2C358 100%);
-  color: #140F0E;
+  background-color: #641E32;
+  color: #FFFFFF;
   border-radius: 9999px;
   padding: 0.85rem 1.85rem;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.02em;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
   cursor: pointer;
-  border: 1px solid #CCA727;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 2px 12px rgba(204, 167, 39, 0.2);
+  border: 1px solid #641E32;
+  box-shadow: 0 4px 16px rgba(100, 30, 50, 0.25);
 }
 
-.btn-gold::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
-  transition: left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+.btn-wine:hover {
+  background-color: #7B243D;
+  border-color: #7B243D;
+  box-shadow: 0 6px 24px rgba(100, 30, 50, 0.35);
 }
 
-.btn-gold:hover::before {
-  left: 100%;
+.btn-gold {
+  /* Alias for backward compatibility -> mapped to refined wine luxury */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #641E32;
+  color: #FFFFFF;
+  border-radius: 9999px;
+  padding: 0.85rem 1.85rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid #641E32;
 }
 
 .btn-gold:hover {
-  background: linear-gradient(135deg, #E2C358 0%, #CCA727 100%);
-  box-shadow: 0 6px 24px rgba(204, 167, 39, 0.35);
-  transform: translateY(-1px);
-}
-
-.btn-gold:active {
-  transform: scale(0.98);
+  background-color: #7B243D;
+  border-color: #7B243D;
 }
 
 .btn-pill-filter {
   display: inline-flex;
   align-items: center;
-  padding: 0.5rem 1.15rem;
+  padding: 0.45rem 1.15rem;
   border-radius: 9999px;
   font-size: 0.8125rem;
   font-weight: 500;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid #E8E0D5;
-  background-color: #FAF9F6;
-  color: #8B8076;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid #E2E0D8;
+  background-color: #FFFFFF;
+  color: #777777;
+  cursor: pointer;
 }
 
 .btn-pill-filter:hover {
-  border-color: #211A18;
-  color: #211A18;
+  border-color: #111111;
+  color: #111111;
 }
 
 .btn-pill-filter.active {
-  background-color: #211A18;
-  color: #CCA727;
-  border-color: #211A18;
-  box-shadow: 0 2px 8px rgba(33, 26, 24, 0.15);
+  background-color: #111111;
+  color: #FFFFFF;
+  border-color: #111111;
+  box-shadow: 0 2px 8px rgba(17, 17, 17, 0.2);
 }
 
 /* Glass Sheen Light Sweep Effect */
@@ -233,7 +246,7 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.15) 50%,
     transparent 100%
   );
   transform: skewX(-25deg);
@@ -248,44 +261,15 @@
 /* Editorial Image Zoom Containers */
 .editorial-img-container {
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .editorial-img-container img {
-  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .editorial-img-container:hover img {
-  transform: scale(1.045);
-}
-
-/* 3D Tilt Card Perspective */
-.card-perspective {
-  perspective: 1000px;
-}
-
-/* Animated Clip-Path Curtain Reveals */
-.clip-curtain-reveal {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  transition: clip-path 1.2s cubic-bezier(0.65, 0, 0.35, 1);
-}
-
-/* Gold Gradient Shimmer Border */
-.border-shimmer-gold {
-  position: relative;
-}
-
-.border-shimmer-gold::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(204, 167, 39, 0.6), transparent 50%, rgba(204, 167, 39, 0.4));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+  transform: scale(1.04);
 }
 
 /* Accessibility: Respect Reduced Motion */

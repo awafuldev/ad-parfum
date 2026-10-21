@@ -9,44 +9,68 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        porcelain: {
-          DEFAULT: "#FAF9F6",
+        // Luxury Contemporary Palette
+        noir: {
+          DEFAULT: "#111111",
+          deep: "#0A0A0A",
+          soft: "#1A1A1A",
+          card: "#161616",
+        },
+        ivory: {
+          DEFAULT: "#F7F6F2",
           pure: "#FFFFFF",
-          warm: "#F5F3EF",
+          warm: "#FBFBF9",
+          dark: "#ECEAE3",
+        },
+        wine: {
+          DEFAULT: "#641E32",
+          hover: "#7B243D",
+          dark: "#4A1524",
+          light: "#8C2E49",
+          glow: "rgba(100, 30, 50, 0.25)",
+        },
+        neutralGray: {
+          DEFAULT: "#777777",
+          border: "#E2E0D8",
+          light: "#999999",
+          dark: "#444444",
+        },
+
+        // Backward compatibility mappings - transformed to the new palette
+        porcelain: {
+          DEFAULT: "#F7F6F2",
+          pure: "#FFFFFF",
+          warm: "#FBFBF9",
         },
         espresso: {
-          DEFAULT: "#211A18",
-          deep: "#140F0E",
-          soft: "#2A2220",
-          card: "#1D1615",
+          DEFAULT: "#111111",
+          deep: "#0A0A0A",
+          soft: "#1A1A1A",
+          card: "#161616",
         },
         charcoal: {
-          DEFAULT: "#292524",
-          dark: "#1C1917",
-          light: "#3F3A36",
+          DEFAULT: "#1A1A1A",
+          dark: "#0F0F0F",
+          light: "#2A2A2A",
         },
         champagne: {
-          DEFAULT: "#CCA727",
-          light: "#E2C358",
-          dark: "#A38217",
-          muted: "#C6AD83",
-          glow: "rgba(204, 167, 39, 0.25)",
+          DEFAULT: "#641E32", // Deep wine replaces yellow/champagne
+          light: "#7B243D",
+          dark: "#4A1524",
+          muted: "#8C2E49",
+          glow: "rgba(100, 30, 50, 0.25)",
         },
         sand: {
-          DEFAULT: "#E8E0D5",
-          light: "#F0EAE1",
-          dark: "#D6CCC0",
+          DEFAULT: "#E5E3DC",
+          light: "#EFECE5",
+          dark: "#D6D3CA",
         },
-        amber: {
-          warm: "#8D5B28",
-          deep: "#5C3615",
-        },
-        taupe: "#8B8076",
-        smoke: "#737373",
-        ash: "#A3A3A3",
-        mist: "#F3F4F6",
-        graphite: "#5E5E5E",
-        hairline: "#E5E7EB",
+        taupe: "#777777",
+        smoke: "#666666",
+        ash: "#888888",
+        mist: "#F2F0EB",
+        graphite: "#333333",
+        hairline: "#E2E0D8",
       },
       fontFamily: {
         serif: [
@@ -74,8 +98,8 @@ const config: Config = {
         editorial: "1.12",
       },
       borderRadius: {
-        cowboy: "8px",
-        bottle: "12px",
+        cowboy: "6px",
+        bottle: "10px",
       },
       maxWidth: {
         cowboy: "1440px",
