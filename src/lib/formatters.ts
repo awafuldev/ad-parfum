@@ -1,23 +1,27 @@
 import { Order } from "@/types";
 
-export function formatPrice(amount: number, currencySymbol: string = "$"): string {
-  // Format as Colombian Pesos or local integer currency with thousands separators
-  const formatted = new Intl.NumberFormat("es-CO", {
+/**
+ * Format monetary amount in Dominican Pesos (DOP).
+ * Centralized formatter using 'es-DO' locale and 'RD$' currency symbol.
+ * Uses integer rounding (no decimals) for fragrance prices.
+ */
+export function formatPrice(amount: number, currencySymbol: string = "RD$"): string {
+  const safeAmount = Math.round(Number(amount) || 0);
+  const formatted = new Intl.NumberFormat("es-DO", {
     maximumFractionDigits: 0,
-  }).format(amount);
-  return `${currencySymbol} ${formatted} COP`;
+    minimumFractionDigits: 0,
+  }).format(safeAmount);
+  return `${currencySymbol} ${formatted}`;
 }
 
-export function formatSimplePrice(amount: number, currencySymbol: string = "$"): string {
-  return `${currencySymbol} ${new Intl.NumberFormat("es-CO", {
-    maximumFractionDigits: 0,
-  }).format(amount)}`;
+export function formatSimplePrice(amount: number, currencySymbol: string = "RD$"): string {
+  return formatPrice(amount, currencySymbol);
 }
 
 export function formatDate(isoString: string): string {
   try {
     const d = new Date(isoString);
-    return new Intl.DateTimeFormat("es-CO", {
+    return new Intl.DateTimeFormat("es-DO", {
       year: "numeric",
       month: "short",
       day: "numeric",
@@ -35,8 +39,18 @@ export function generateOrderReference(): string {
   return `AD-${year}-${random}`;
 }
 
-export function buildWhatsAppOrderUrl(order: Order, whatsappNumber: string): string {
+/**
+ * Builds official WhatsApp order message for Dominican market.
+ * Omits wa.me link generation if no phone is configured in the admin.
+ */
+export function buildWhatsAppOrderUrl(order: Order, whatsappNumber?: string): string {
+  if (!whatsappNumber || !whatsappNumber.trim()) {
+    return "";
+  }
+
   const cleanPhone = whatsappNumber.replace(/[^0-9]/g, "");
+  if (!cleanPhone) return "";
+
   const itemsText = order.items
     .map(
       (item) =>
@@ -46,19 +60,31 @@ export function buildWhatsAppOrderUrl(order: Order, whatsappNumber: string): str
     )
     .join("\n");
 
-  const message = `✨ *NUEVO PEDIDO EN A&D PARFUM* ✨\n\n` +
+  const shippingLocation = [order.shipping_city, order.shipping_department]
+    .filter(Boolean)
+    .join(", ");
+
+  const paymentMethodLabel =
+    order.payment_method === "contra_entrega"
+      ? "Pago Contra Entrega (Efectivo al recibir)"
+      : order.payment_method === "transferencia"
+      ? "Transferencia Bancaria Directa (Banreservas / Banco BHD / Banco Popular)"
+      : "Pago con Tarjeta de Crédito / Débito";
+
+  const message =
+    `✨ *NUEVO PEDIDO — A&D PARFUM* ✨\n\n` +
     `*Referencia:* ${order.reference}\n` +
     `*Cliente:* ${order.customer_name}\n` +
-    `*WhatsApp / Teléfono:* ${order.customer_phone}\n` +
-    `*Ciudad:* ${order.shipping_city}, ${order.shipping_department}\n` +
+    `*Teléfono / WhatsApp:* ${order.customer_phone}\n` +
+    `*Destino:* ${shippingLocation}\n` +
     `*Dirección:* ${order.shipping_address}\n` +
     (order.delivery_notes ? `*Instrucciones:* ${order.delivery_notes}\n` : "") +
-    `\n*DETALLE DE FRAGANCIAS:*\n${itemsText}\n\n` +
+    `\n*DETALLE DEL PEDIDO:*\n${itemsText}\n\n` +
     `*Subtotal:* ${formatPrice(order.subtotal)}\n` +
-    `*Envío:* ${formatPrice(order.shipping_fee)} (${order.shipping_method})\n` +
+    `*Envío:* ${order.shipping_fee > 0 ? formatPrice(order.shipping_fee) : "A coordinar / Incluido"}\n` +
     `*TOTAL A PAGAR:* ${formatPrice(order.total)}\n` +
-    `*Método de Pago:* ${order.payment_method === "contra_entrega" ? "Contra Entrega (Efectivo / Transferencia local)" : order.payment_method === "transferencia" ? "Transferencia Bancaria (Bancolombia / Nequi / Daviplata)" : "Pago en línea con Tarjeta"}\n\n` +
-    `Por favor confírmenme los detalles de envío y disponibilidad. ¡Muchas gracias!`;
+    `*Método de Pago:* ${paymentMethodLabel}\n\n` +
+    `Por favor confírmenme la disponibilidad y la coordinación de entrega. ¡Muchas gracias!`;
 
   return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
 }

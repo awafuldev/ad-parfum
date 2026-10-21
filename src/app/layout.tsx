@@ -9,11 +9,11 @@ import { Footer } from "@/components/layout/Footer";
 export const metadata: Metadata = {
   title: "A&D Parfum — Haute Parfumerie, Nicho & Decants de Autor",
   description:
-    "Curaduría de alta perfumería árabe, creaciones de nicho y decants exclusivos en atomizadores de cristal. Descubre tu memoria olfativa con A&D Parfum en Colombia.",
+    "Curaduría de alta perfumería árabe, creaciones de nicho y decants exclusivos en atomizadores de cristal. Descubre tu memoria olfativa con A&D Parfum en República Dominicana.",
   keywords: [
     "A&D Parfum",
     "AD Parfum",
-    "Perfumes Árabes Colombia",
+    "Perfumes Árabes República Dominicana",
     "Decants de Lujo",
     "Lattafa Khamrah",
     "Rasasi Hawas",
@@ -25,10 +25,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "A&D Parfum — Haute Parfumerie & Decants de Autor",
     description:
-      "La más selecta curaduría de perfumes árabes, elixires de nicho y decants originales fraccionados en cristal. Envíos asegurados a toda Colombia.",
+      "La más selecta curaduría de perfumes árabes, elixires de nicho y decants originales fraccionados en cristal. Envíos en República Dominicana.",
     url: "https://adparfum.com",
     siteName: "A&D Parfum",
-    locale: "es_CO",
+    locale: "es_DO",
     type: "website",
   },
 };

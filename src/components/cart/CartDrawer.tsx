@@ -15,6 +15,7 @@ export function CartDrawer() {
     updateQuantity,
     itemCount,
     subtotal,
+    freeShippingThreshold,
     freeShippingProgress,
   } = useCart();
 
@@ -67,14 +68,14 @@ export function CartDrawer() {
             </button>
           </div>
 
-          {/* Free Shipping Progress Strip */}
+          {/* Dominican Shipping Strip */}
           <div className="bg-sand/20 px-6 py-3.5 border-b border-sand text-xs">
             {freeShippingProgress.isFree ? (
               <p className="text-espresso font-medium flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-champagne inline-block animate-pulse" />
-                <span>¡Disfrutas de <strong>Envío Gratis Nacional</strong> con A&D Parfum!</span>
+                <span>¡Disfrutas de <strong>Envío Gratis</strong> con A&D Parfum!</span>
               </p>
-            ) : (
+            ) : freeShippingThreshold > 0 ? (
               <div>
                 <p className="text-taupe mb-1.5 font-light">
                   Agrega{" "}
@@ -90,6 +91,11 @@ export function CartDrawer() {
                   />
                 </div>
               </div>
+            ) : (
+              <p className="text-taupe font-light flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-champagne inline-block" />
+                <span>Envíos en República Dominicana • Empaque sellado de alta pureza</span>
+              </p>
             )}
           </div>
 
@@ -202,7 +208,7 @@ export function CartDrawer() {
                   <span className="text-espresso font-semibold">{formatPrice(subtotal)}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Envío nacional estimado</span>
+                  <span>Envío estimado (República Dominicana)</span>
                   <span>
                     {freeShippingProgress.isFree ? (
                       <span className="text-emerald-700 font-semibold">Gratis</span>
@@ -230,7 +236,7 @@ export function CartDrawer() {
               </Link>
 
               <p className="text-[11px] text-center text-taupe font-light">
-                Pago contra entrega o transferencia directa • Empaque sellado A&D Parfum
+                Pago contra entrega o transferencia bancaria • Empaque sellado A&D Parfum
               </p>
             </div>
           )}

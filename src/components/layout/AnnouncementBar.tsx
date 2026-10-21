@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Instagram, Sparkles } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 export function AnnouncementBar() {
   return (
@@ -13,18 +13,18 @@ export function AnnouncementBar() {
         </div>
 
         <p className="text-center w-full md:w-auto font-medium tracking-tight">
-          Envíos a toda Colombia • Muestras fraccionadas en atomizadores de cristal neutro de alta precisión
+          A&amp;D Parfum — República Dominicana • Decants 100% auténticos en atomizador de cristal
         </p>
 
         <div className="hidden md:flex items-center gap-4">
           <Link
-            href="https://www.instagram.com/adparfum/"
+            href="https://www.instagram.com/eidiparfum/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 text-sand hover:text-champagne transition-colors"
           >
             <Instagram className="w-3.5 h-3.5" />
-            <span>@adparfum</span>
+            <span>@eidiparfum</span>
           </Link>
         </div>
       </div>

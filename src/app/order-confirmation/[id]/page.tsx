@@ -80,23 +80,22 @@ export default async function OrderConfirmationPage({ params }: Props) {
           <div className="bg-white rounded-cowboy border border-champagne/40 p-6 sm:p-8 mb-8 space-y-4 shadow-sm">
             <div className="flex items-center gap-2 text-espresso font-semibold text-sm">
               <Building className="w-5 h-5 text-champagne" />
-              <span>Instrucciones para Transferencia Bancaria (A&D Parfum)</span>
+              <span>Instrucciones para Transferencia Bancaria</span>
             </div>
             <p className="text-xs text-smoke leading-relaxed font-light">
               Por favor realiza tu transferencia por el valor exacto de{" "}
-              <strong className="text-espresso font-bold">{formatPrice(order.total)}</strong> a cualquiera de las siguientes cuentas oficiales de A&D Parfum Colombia:
+              <strong className="text-espresso font-bold">{formatPrice(order.total)}</strong>.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-              <div className="p-4 rounded-cowboy bg-sand/15 border border-sand">
-                <p className="font-semibold text-espresso">Bancolombia (Ahorros)</p>
-                <p className="text-graphite font-mono mt-1 font-bold">No. 123-456789-00</p>
-                <p className="text-[11px] text-taupe font-light">Titular: A&D Parfum S.A.S</p>
-              </div>
-              <div className="p-4 rounded-cowboy bg-sand/15 border border-sand">
-                <p className="font-semibold text-espresso">Nequi / Daviplata</p>
-                <p className="text-graphite font-mono mt-1 font-bold">300 123 4567</p>
-                <p className="text-[11px] text-taupe font-light">Envía comprobante con ref: {order.reference}</p>
-              </div>
+            <div className="p-4 rounded-cowboy bg-sand/15 border border-champagne/30 text-xs space-y-2">
+              <p className="font-semibold text-espresso">📲 Datos de cuenta bancaria (República Dominicana)</p>
+              <p className="text-graphite leading-relaxed">
+                Te enviaremos los datos de cuentas bancarias dominicanas por WhatsApp para completar tu pago.
+                Por favor ten a mano tu número de referencia:
+              </p>
+              <p className="font-mono text-espresso font-bold tracking-widest">{order.reference}</p>
+              <p className="text-[11px] text-taupe font-light">
+                Bancos disponibles: Banreservas · BHD León · Banco Popular · Scotiabank · apap
+              </p>
             </div>
           </div>
         )}

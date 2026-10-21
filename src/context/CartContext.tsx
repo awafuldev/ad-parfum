@@ -24,7 +24,6 @@ interface CartContextType {
 }
 
 const CART_STORAGE_KEY = "ad_parfum_cart_v1";
-const FREE_SHIPPING_THRESHOLD = 200000; // $200,000 COP
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
@@ -32,8 +31,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  // Free shipping threshold can be fetched or set by admin. 0 indicates requiring store configuration.
+  const [freeShippingThreshold, setFreeShippingThreshold] = useState<number>(0);
 
-  // Load from localStorage on mount
+  // Load from localStorage on mount and load store settings
   useEffect(() => {
     try {
       const saved = localStorage.getItem(CART_STORAGE_KEY);
@@ -45,6 +46,16 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     } finally {
       setIsLoaded(true);
     }
+
+    // Attempt to load settings
+    fetch("/api/settings")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (data && typeof data.free_shipping_threshold === "number") {
+          setFreeShippingThreshold(data.free_shipping_threshold);
+        }
+      })
+      .catch(() => {});
   }, []);
 
   // Save to localStorage whenever items change
@@ -129,9 +140,12 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const itemCount = items.reduce((acc, item) => acc + item.quantity, 0);
   const subtotal = items.reduce((acc, item) => acc + item.unit_price * item.quantity, 0);
 
-  const isFree = subtotal >= FREE_SHIPPING_THRESHOLD;
-  const needed = Math.max(0, FREE_SHIPPING_THRESHOLD - subtotal);
-  const percent = Math.min(100, Math.round((subtotal / FREE_SHIPPING_THRESHOLD) * 100));
+  const isFree = freeShippingThreshold > 0 && subtotal >= freeShippingThreshold;
+  const needed = freeShippingThreshold > 0 ? Math.max(0, freeShippingThreshold - subtotal) : 0;
+  const percent =
+    freeShippingThreshold > 0
+      ? Math.min(100, Math.round((subtotal / freeShippingThreshold) * 100))
+      : 0;
 
   return (
     <CartContext.Provider
@@ -147,7 +161,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         clearCart,
         itemCount,
         subtotal,
-        freeShippingThreshold: FREE_SHIPPING_THRESHOLD,
+        freeShippingThreshold,
         freeShippingProgress: {
           percent,
           needed,

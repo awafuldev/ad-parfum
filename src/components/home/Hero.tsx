@@ -74,7 +74,7 @@ export function Hero() {
             Maison de Haute Parfumerie
           </span>
           <span className="text-sand/30">•</span>
-          <span className="text-porcelain uppercase font-semibold">Bogotá & Dubái</span>
+          <span className="text-porcelain uppercase font-semibold">R. Dominicana &amp; Dubái</span>
         </div>
 
         <div className="hidden sm:flex items-center gap-4 text-[11px] tracking-luxury text-sand/70 uppercase">
@@ -185,12 +185,12 @@ export function Hero() {
                   &quot;El perfume no se compra a ciegas; se vive y evoluciona en la propia piel.&quot;
                 </p>
                 <p className="text-[11px] text-sand/65 font-light">
-                  Muestras desde <strong className="text-champagne font-semibold">$ 30.000 COP</strong>
+                  Muestras disponibles en <strong className="text-champagne font-semibold">5 ml y 10 ml</strong>
                 </p>
               </div>
 
               <div className="pt-3 border-t border-sand/15 flex items-center justify-between text-xs">
-                <span className="text-[10px] text-sand/60 uppercase">Envío Colombia</span>
+                <span className="text-[10px] text-sand/60 uppercase">Rep. Dominicana</span>
                 <span className="text-xs text-emerald-400 font-medium flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   En Stock Inmediato

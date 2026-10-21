@@ -58,7 +58,7 @@
           "size_ml": 10,
           "price": 68000,
           "compare_at_price": 75000,
-          "stock": 16,
+          "stock": 15,
           "sku": "LAT-KHA-10",
           "is_available": true
         },
@@ -688,6 +688,40 @@
   ],
   "orders": [
     {
+      "id": "ord-1792510656436",
+      "reference": "AD-2026-6835",
+      "customer_name": "Valentina Gómez",
+      "customer_email": "valentina@ejemplo.co",
+      "customer_phone": "3109876543",
+      "shipping_address": "Carrera 7 #71-52, Edificio Aurora, Apto 901",
+      "shipping_city": "Bogotá",
+      "shipping_department": "Cundinamarca",
+      "delivery_notes": "Dejar en recepción con el conserje",
+      "shipping_method": "standard",
+      "shipping_fee": 15000,
+      "subtotal": 68000,
+      "total": 83000,
+      "payment_method": "contra_entrega",
+      "payment_status": "paid",
+      "status": "shipped",
+      "items": [
+        {
+          "product_id": "prod-khamrah",
+          "variant_id": "var-khamrah-10ml",
+          "product_name": "Khamrah",
+          "brand_name": "Lattafa Perfumes",
+          "variant_name": "Decant 10 ml (Atomizador Viaje)",
+          "size_ml": 10,
+          "unit_price": 68000,
+          "quantity": 1,
+          "total_price": 68000,
+          "image": "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1000&q=85"
+        }
+      ],
+      "created_at": "2026-10-20T15:37:36.436Z",
+      "updated_at": "2026-10-20T15:37:36.760Z"
+    },
+    {
       "id": "ord-1792509222477",
       "reference": "AD-2026-8483",
       "customer_name": "Valentina Gómez",
@@ -963,19 +997,19 @@
   "settings": {
     "store_name": "A&D Parfum",
     "store_slogan": "Alta Perfumería de Medio Oriente, Creaciones de Nicho & Decants de Autor",
-    "currency_code": "COP",
-    "currency_symbol": "$",
-    "whatsapp_number": "573001234567",
-    "whatsapp_display": "+57 300 123 4567",
-    "instagram_handle": "adparfum",
-    "instagram_url": "https://www.instagram.com/adparfum/",
+    "currency_code": "DOP",
+    "currency_symbol": "RD$",
+    "whatsapp_number": "",
+    "whatsapp_display": "Configura tu número en el panel admin",
+    "instagram_handle": "eidiparfum",
+    "instagram_url": "https://www.instagram.com/eidiparfum/",
     "email": "contacto@adparfum.com",
-    "announcement_text": "Envíos a toda Colombia • A&D Parfum: decants 100% auténticos fraccionados en atomizador de cristal",
+    "announcement_text": "A&D Parfum — Haute Parfumerie en República Dominicana • Decants 100% auténticos en atomizador de cristal",
     "announcement_enabled": true,
-    "free_shipping_threshold": 200000,
-    "standard_shipping_fee": 15000,
-    "express_shipping_fee": 25000,
-    "delivery_coverage": "Cobertura nacional en Colombia (Bogotá, Medellín, Cali, Barranquilla, Bucaramanga y principales ciudades)",
-    "address_placeholder": "Bogotá, Colombia (Envíos nacionales)"
+    "free_shipping_threshold": 0,
+    "standard_shipping_fee": 0,
+    "express_shipping_fee": 0,
+    "delivery_coverage": "República Dominicana (envío a coordinar por WhatsApp)",
+    "address_placeholder": "República Dominicana"
   }
 }
