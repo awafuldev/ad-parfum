@@ -193,8 +193,38 @@ export function CatalogClient({ initialProducts, brands, categories }: Props) {
           </div>
         </div>
 
+        {/* Quick Category Selector Pills */}
+        <div className="pt-6 pb-2 flex items-center gap-2 overflow-x-auto scrollbar-none">
+          {[
+            { id: "all", label: "Todas las fragancias" },
+            { id: "cat-arabes", label: "Perfumes Árabes" },
+            { id: "cat-decants", label: "Decants & Muestras" },
+            { id: "cat-nicho", label: "Alta Gama & Nicho" },
+            { id: "Hombre", label: "Masculinos" },
+            { id: "Mujer", label: "Femeninos" },
+          ].map((tab) => {
+            const isActive = selectedCategory === tab.id;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => {
+                  setSelectedCategory(tab.id);
+                  updateUrl({ category: tab.id });
+                }}
+                className={`whitespace-nowrap px-4 py-2 rounded-full text-xs font-semibold transition-all ${
+                  isActive
+                    ? "bg-noir text-white shadow-sm"
+                    : "bg-white text-gray hover:text-noir border border-border"
+                }`}
+              >
+                {tab.label}
+              </button>
+            );
+          })}
+        </div>
+
         {/* Search, Filter bar & Sort controls */}
-        <div className="py-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-b border-sand/70">
+        <div className="py-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-b border-sand/70">
           {/* Search Input */}
           <div className="relative flex-1 max-w-md">
             <Search className="w-4 h-4 text-taupe absolute left-3.5 top-1/2 -translate-y-1/2" />

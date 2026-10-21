@@ -266,11 +266,11 @@ export function EditorialProductCard({ product, featuredSpotlight = false }: Pro
 
           {/* Quick Variant Pills */}
           <div className="pt-2 border-t border-sand/60">
-            <div className="flex items-center justify-between text-[10px] text-taupe mb-1.5">
-              <span>Formatos disponibles:</span>
+            <div className="flex items-center justify-between text-[10px] text-taupe mb-1.5 font-medium">
+              <span>Presentación:</span>
               <span className="font-semibold text-espresso">{selectedVariant.name}</span>
             </div>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="grid grid-cols-3 gap-1 bg-sand/15 p-1 rounded-lg border border-sand/60">
               {product.variants.map((v) => {
                 const isSelected = selectedVariant.id === v.id;
                 return (
@@ -282,15 +282,16 @@ export function EditorialProductCard({ product, featuredSpotlight = false }: Pro
                       setSelectedVariant(v);
                     }}
                     disabled={!v.is_available}
-                    className={`text-[10px] px-2.5 py-1 rounded-full transition-all ${
+                    className={`py-1.5 px-1 rounded-md text-center transition-all ${
                       !v.is_available
-                        ? "opacity-35 cursor-not-allowed bg-sand/20"
+                        ? "opacity-35 cursor-not-allowed text-taupe"
                         : isSelected
-                        ? "bg-espresso text-champagne font-semibold border border-espresso"
-                        : "bg-sand/20 text-espresso hover:bg-sand/40 border border-sand"
+                        ? "bg-espresso text-white font-bold shadow-xs"
+                        : "bg-white text-espresso hover:bg-sand/30 font-medium"
                     }`}
                   >
-                    {v.size_ml} ml
+                    <span className="block text-[11px] leading-tight font-bold">{v.size_ml} ml</span>
+                    <span className={`block text-[9px] ${isSelected ? "text-white/80" : "text-taupe"}`}>{formatPrice(v.price)}</span>
                   </button>
                 );
               })}
@@ -300,10 +301,10 @@ export function EditorialProductCard({ product, featuredSpotlight = false }: Pro
       </div>
 
       {/* Card Footer: Live Selected Price & Add Action */}
-      <div className="px-5 pb-5 pt-3 border-t border-sand/60 flex items-center justify-between mt-auto">
+      <div className="px-5 pb-5 pt-3 border-t border-sand/60 flex items-center justify-between gap-3 mt-auto">
         <div>
-          <span className="text-[10px] text-taupe block uppercase font-medium">Precio</span>
-          <span className="text-base font-semibold text-espresso">
+          <span className="text-[10px] text-taupe block uppercase font-medium">Total Formato</span>
+          <span className="text-lg font-bold text-espresso">
             {formatPrice(selectedVariant.price)}
           </span>
         </div>
@@ -312,19 +313,23 @@ export function EditorialProductCard({ product, featuredSpotlight = false }: Pro
           type="button"
           onClick={handleAddToCart}
           disabled={!selectedVariant.is_available}
-          className={`btn-primary text-xs py-2 px-3.5 flex items-center gap-1.5 ${
-            addedAnimation ? "bg-emerald-700 text-white border-emerald-700" : ""
+          className={`flex-1 py-2 px-3 rounded-full text-xs font-semibold flex items-center justify-center gap-1.5 transition-all shadow-sm ${
+            addedAnimation
+              ? "bg-emerald-700 text-white border-emerald-700"
+              : selectedVariant.is_available
+              ? "bg-noir text-white hover:bg-wine active:scale-98"
+              : "bg-gray/20 text-gray cursor-not-allowed"
           }`}
         >
           {addedAnimation ? (
             <>
-              <Check className="w-3.5 h-3.5" />
-              <span>Añadido</span>
+              <Check className="w-3.5 h-3.5 animate-in zoom-in" />
+              <span>¡Añadido!</span>
             </>
           ) : (
             <>
               <ShoppingBag className="w-3.5 h-3.5" />
-              <span>Comprar</span>
+              <span>Añadir a Bolsa</span>
             </>
           )}
         </button>
