@@ -2,9 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
-import { Trash2, Plus, Minus, ArrowRight, ShieldCheck, ShoppingBag } from "lucide-react";
+import { Trash2, Plus, Minus, ArrowRight, ShieldCheck, ShoppingBag, MessageCircle } from "lucide-react";
 import { useCart } from "@/context/CartContext";
-import { formatPrice } from "@/lib/formatters";
+import { formatPrice, buildWhatsAppCartUrl } from "@/lib/formatters";
 
 export default function CartPage() {
   const {
@@ -174,13 +174,25 @@ export default function CartPage() {
                 <span className="font-price text-2xl font-bold text-espresso">{formatPrice(subtotal)}</span>
               </div>
 
-              <Link
-                href="/checkout"
-                className="btn-gold w-full py-4 text-xs font-semibold justify-center gap-2 group shadow-md"
+              <a
+                href={buildWhatsAppCartUrl(items, subtotal)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2.5 shadow-lg transition-all active:scale-98 cursor-pointer group"
               >
-                <span>Proceder al Checkout</span>
+                <MessageCircle className="w-4 h-4 fill-white/20 transition-transform group-hover:scale-110" />
+                <span>Pedir por WhatsApp ahora</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Link>
+              </a>
+
+              <div className="text-center pt-1">
+                <Link
+                  href="/checkout"
+                  className="text-xs text-taupe hover:text-espresso underline underline-offset-2 transition-colors"
+                >
+                  O personalizar datos de entrega antes de enviar
+                </Link>
+              </div>
 
               <div className="pt-3 border-t border-sand space-y-2 text-[11px] text-taupe font-light">
                 <div className="flex items-center gap-2">

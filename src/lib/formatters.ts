@@ -88,3 +88,51 @@ export function buildWhatsAppOrderUrl(order: Order, whatsappNumber?: string): st
 
   return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
 }
+
+export interface CartItemLike {
+  product_name: string;
+  variant_name: string;
+  quantity: number;
+  unit_price: number;
+}
+
+/**
+ * Builds direct WhatsApp checkout URL from active cart items.
+ * Defaults to Dominican official contact number +1 (829) 375-1717.
+ */
+export function buildWhatsAppCartUrl(
+  items: CartItemLike[],
+  subtotal: number,
+  customerName?: string,
+  customerCity?: string,
+  whatsappNumber: string = "18293751717"
+): string {
+  const cleanPhone = whatsappNumber.replace(/[^0-9]/g, "") || "18293751717";
+
+  const itemsText = items
+    .map(
+      (item) =>
+        `• ${item.product_name} (${item.variant_name}) x${item.quantity} = ${formatPrice(
+          item.unit_price * item.quantity
+        )}`
+    )
+    .join("\n");
+
+  const customerInfo = [
+    customerName?.trim() ? `*Cliente:* ${customerName.trim()}` : "",
+    customerCity?.trim() ? `*Destino:* ${customerCity.trim()}` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  const message =
+    `✨ *PEDIDO A&D PARFUM — REPÚBLICA DOMINICANA* ✨\n\n` +
+    (customerInfo ? `${customerInfo}\n\n` : "") +
+    `*FRAGANCIAS SOLICITADAS:*\n` +
+    `${itemsText}\n\n` +
+    `*TOTAL ESTIMADO:* ${formatPrice(subtotal)}\n` +
+    `*Envío:* A coordinar para todo RD 🇩🇴\n\n` +
+    `¡Hola! Deseo ordenar estas fragancias con entrega en República Dominicana. ¿Me confirman disponibilidad y los pasos para el pago y despacho?`;
+
+  return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
+}

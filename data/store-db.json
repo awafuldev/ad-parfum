@@ -436,7 +436,7 @@
           "name": "Decant 5 ml (Muestra Portátil)",
           "size_ml": 5,
           "price": 30000,
-          "stock": 38,
+          "stock": 37,
           "sku": "LAT-YAR-05",
           "is_available": true
         },
@@ -692,6 +692,39 @@
     }
   ],
   "orders": [
+    {
+      "id": "ord-1792619111620",
+      "reference": "AD-2026-4694",
+      "customer_name": "Alejandro",
+      "customer_email": "awaful3@gmail.com",
+      "customer_phone": "8292622666",
+      "shipping_address": "asdad, Sector asd",
+      "shipping_city": "Santo Domingo de Guzmán",
+      "shipping_department": "Distrito Nacional",
+      "shipping_method": "pickup",
+      "shipping_fee": 0,
+      "subtotal": 30000,
+      "total": 30000,
+      "payment_method": "online_card",
+      "payment_status": "paid",
+      "status": "confirmed",
+      "items": [
+        {
+          "product_id": "prod-yara",
+          "variant_id": "var-yara-5ml",
+          "product_name": "Yara Candy Pink",
+          "brand_name": "Lattafa Perfumes",
+          "variant_name": "Decant 5 ml (Muestra Portátil)",
+          "size_ml": 5,
+          "unit_price": 30000,
+          "quantity": 1,
+          "total_price": 30000,
+          "image": "/images/products/prod-yara/1.png"
+        }
+      ],
+      "created_at": "2026-10-21T21:45:11.620Z",
+      "updated_at": "2026-10-21T21:45:11.620Z"
+    },
     {
       "id": "ord-1792510656436",
       "reference": "AD-2026-6835",
@@ -1004,8 +1037,8 @@
     "store_slogan": "Alta Perfumería de Medio Oriente, Creaciones de Nicho & Decants de Autor",
     "currency_code": "DOP",
     "currency_symbol": "RD$",
-    "whatsapp_number": "",
-    "whatsapp_display": "Configura tu número en el panel admin",
+    "whatsapp_number": "18293751717",
+    "whatsapp_display": "+1 (829) 375-1717",
     "instagram_handle": "eidiparfum",
     "instagram_url": "https://www.instagram.com/eidiparfum/",
     "email": "contacto@adparfum.com",

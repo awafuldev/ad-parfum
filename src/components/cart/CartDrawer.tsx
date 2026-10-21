@@ -2,9 +2,9 @@
 
 import React, { useEffect } from "react";
 import Link from "next/link";
-import { X, Trash2, Plus, Minus, ShoppingBag, ArrowRight, ShieldCheck } from "lucide-react";
+import { X, Trash2, Plus, Minus, ShoppingBag, ArrowRight, ShieldCheck, MessageCircle } from "lucide-react";
 import { useCart } from "@/context/CartContext";
-import { formatPrice } from "@/lib/formatters";
+import { formatPrice, buildWhatsAppCartUrl } from "@/lib/formatters";
 
 export function CartDrawer() {
   const {
@@ -226,18 +226,28 @@ export function CartDrawer() {
                 </span>
               </div>
 
-              <Link
-                href="/checkout"
+              <a
+                href={buildWhatsAppCartUrl(items, subtotal)}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={closeCart}
-                className="btn-gold w-full py-4 flex items-center justify-center gap-2 group shadow-lg"
+                className="w-full py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2.5 shadow-lg transition-all active:scale-98 cursor-pointer group"
               >
-                <span>Proceder al Checkout</span>
+                <MessageCircle className="w-4 h-4 fill-white/20 transition-transform group-hover:scale-110" />
+                <span>Pedir por WhatsApp ahora</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Link>
+              </a>
 
-              <p className="text-[11px] text-center text-taupe font-light">
-                Pago contra entrega o transferencia bancaria • Empaque sellado A&D Parfum
-              </p>
+              <div className="flex items-center justify-between text-[11px] text-taupe pt-1 px-1">
+                <Link
+                  href="/checkout"
+                  onClick={closeCart}
+                  className="hover:text-espresso underline underline-offset-2 transition-colors"
+                >
+                  Ver resumen de pedido
+                </Link>
+                <span>Envíos a todo RD 🇩🇴</span>
+              </div>
             </div>
           )}
         </div>
