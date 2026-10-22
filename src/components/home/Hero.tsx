@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowDown, Sparkles, ShieldCheck } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 
 export function Hero() {
   const scrollToInventory = (e: React.MouseEvent) => {
@@ -55,10 +55,19 @@ export function Hero() {
           {/* Main Editorial Block */}
           <div className="max-w-2xl space-y-5 sm:space-y-6 pb-4 sm:pb-8">
             
-            {/* Subtle Brand Pill */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[10px] sm:text-[11px] uppercase tracking-widest text-white/90">
-              <Sparkles className="w-3 h-3 text-wine-light" />
-              <span>Alta Perfumería de Autor &amp; Decants en Cristal</span>
+            {/* Official Brand Logo Emblem (Transparent PNG) & Brand Pill */}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/logo-light.png"
+                alt="A&D Parfum — Alta Perfumería"
+                className="h-12 sm:h-16 w-auto object-contain filter drop-shadow-[0_8px_24px_rgba(0,0,0,0.7)] self-start"
+              />
+              <div className="h-8 w-[1px] bg-white/20 hidden sm:block" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[10px] sm:text-[11px] uppercase tracking-widest text-white/90 w-fit">
+                <i className="fa-solid fa-wand-magic-sparkles text-wine-light text-xs" />
+                <span>Alta Perfumería de Autor &amp; Decants en Cristal</span>
+              </div>
             </div>
 
             {/* Short, Powerful Editorial Headline with Italic Nuance */}
@@ -90,7 +99,10 @@ export function Hero() {
                   <span>+100 Clientes en RD</span>
                 </span>
                 <span className="text-white/40">•</span>
-                <span className="text-white/70">Envíos a todo el país</span>
+                <span className="inline-flex items-center gap-1.5 text-white/70">
+                  <i className="fa-solid fa-truck-fast text-[11px]" />
+                  <span>Envíos a todo el país</span>
+                </span>
               </div>
             </div>
 
