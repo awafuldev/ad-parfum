@@ -55,7 +55,10 @@ export default function CartPage() {
           {freeShippingProgress.isFree ? (
             <p className="text-espresso font-medium flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-champagne inline-block animate-pulse" />
-              <span>✨ ¡Felicidades! Tu orden cuenta con <strong>Envío Gratis</strong> en República Dominicana.</span>
+              <span className="inline-flex items-center gap-1.5">
+                <i className="fa-solid fa-wand-magic-sparkles text-wine text-xs" />
+                <span>¡Felicidades! Tu orden cuenta con <strong>Envío Gratis</strong> en República Dominicana.</span>
+              </span>
             </p>
           ) : (
             <div>

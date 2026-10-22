@@ -87,7 +87,10 @@ export default async function OrderConfirmationPage({ params }: Props) {
               <strong className="font-price text-espresso font-bold">{formatPrice(order.total)}</strong>.
             </p>
             <div className="p-4 rounded-cowboy bg-sand/15 border border-champagne/30 text-xs space-y-2">
-              <p className="font-semibold text-espresso">📲 Datos de cuenta bancaria (República Dominicana)</p>
+              <p className="font-semibold text-espresso flex items-center gap-2">
+                <i className="fa-solid fa-building-columns text-wine" />
+                <span>Datos de cuenta bancaria (República Dominicana)</span>
+              </p>
               <p className="text-graphite leading-relaxed">
                 Te enviaremos los datos de cuentas bancarias dominicanas por WhatsApp para completar tu pago.
                 Por favor ten a mano tu número de referencia:

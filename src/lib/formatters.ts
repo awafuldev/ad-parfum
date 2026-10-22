@@ -72,7 +72,7 @@ export function buildWhatsAppOrderUrl(order: Order, whatsappNumber?: string): st
       : "Pago con Tarjeta de Crédito / Débito";
 
   const message =
-    `✨ *NUEVO PEDIDO — A&D PARFUM* ✨\n\n` +
+    `*NUEVO PEDIDO — A&D PARFUM*\n\n` +
     `*Referencia:* ${order.reference}\n` +
     `*Cliente:* ${order.customer_name}\n` +
     `*Teléfono / WhatsApp:* ${order.customer_phone}\n` +
@@ -126,12 +126,12 @@ export function buildWhatsAppCartUrl(
     .join("\n");
 
   const message =
-    `✨ *PEDIDO A&D PARFUM — REPÚBLICA DOMINICANA* ✨\n\n` +
+    `*PEDIDO A&D PARFUM — REPÚBLICA DOMINICANA*\n\n` +
     (customerInfo ? `${customerInfo}\n\n` : "") +
     `*FRAGANCIAS SOLICITADAS:*\n` +
     `${itemsText}\n\n` +
     `*TOTAL ESTIMADO:* ${formatPrice(subtotal)}\n` +
-    `*Envío:* A coordinar para todo RD 🇩🇴\n\n` +
+    `*Envío:* A coordinar para toda República Dominicana\n\n` +
     `¡Hola! Deseo ordenar estas fragancias con entrega en República Dominicana. ¿Me confirman disponibilidad y los pasos para el pago y despacho?`;
 
   return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;

@@ -246,7 +246,10 @@ export function CartDrawer() {
                 >
                   Ver resumen de pedido
                 </Link>
-                <span>Envíos a todo RD 🇩🇴</span>
+                <span className="inline-flex items-center gap-1.5">
+                  <i className="fa-solid fa-location-dot text-wine text-[11px]" />
+                  <span>Envíos a todo RD</span>
+                </span>
               </div>
             </div>
           )}

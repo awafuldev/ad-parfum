@@ -215,11 +215,13 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                 <span className="font-semibold text-noir">+100 Clientes en RD</span>
               </span>
-              <span className="inline-flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-full border border-border text-gray shadow-2xs">
-                <span>🚚 Envíos a todo el país</span>
+              <span className="inline-flex items-center gap-2 bg-white px-3.5 py-2 rounded-full border border-border text-gray shadow-2xs">
+                <i className="fa-solid fa-truck-fast text-noir/70 text-xs" />
+                <span>Envíos a todo el país</span>
               </span>
-              <span className="inline-flex items-center gap-1.5 bg-white px-3.5 py-2 rounded-full border border-border text-gray shadow-2xs">
-                <span>✨ 100% Genuinos</span>
+              <span className="inline-flex items-center gap-2 bg-white px-3.5 py-2 rounded-full border border-border text-gray shadow-2xs">
+                <i className="fa-solid fa-certificate text-wine text-xs" />
+                <span>100% Genuinos</span>
               </span>
             </div>
           </div>

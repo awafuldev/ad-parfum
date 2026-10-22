@@ -41,13 +41,13 @@
         "/images/products/prod-khamrah/2.png",
         "/images/products/prod-khamrah/3.png"
       ],
-      "base_price": 35000,
+      "base_price": 550,
       "variants": [
         {
           "id": "var-khamrah-5ml",
           "name": "Decant 5 ml (Muestra Portátil)",
           "size_ml": 5,
-          "price": 35000,
+          "price": 550,
           "stock": 35,
           "sku": "LAT-KHA-05",
           "is_available": true
@@ -56,8 +56,8 @@
           "id": "var-khamrah-10ml",
           "name": "Decant 10 ml (Atomizador Viaje)",
           "size_ml": 10,
-          "price": 68000,
-          "compare_at_price": 75000,
+          "price": 950,
+          "compare_at_price": 1100,
           "stock": 15,
           "sku": "LAT-KHA-10",
           "is_available": true
@@ -66,8 +66,8 @@
           "id": "var-khamrah-100ml",
           "name": "Botella Sellada 100 ml (Presentación Completa)",
           "size_ml": 100,
-          "price": 240000,
-          "compare_at_price": 265000,
+          "price": 3450,
+          "compare_at_price": 3800,
           "stock": 12,
           "sku": "LAT-KHA-100",
           "is_available": true
@@ -121,13 +121,13 @@
         "/images/products/prod-hawas/2.jpg",
         "/images/products/prod-hawas/3.png"
       ],
-      "base_price": 36000,
+      "base_price": 600,
       "variants": [
         {
           "id": "var-hawas-5ml",
           "name": "Decant 5 ml (Muestra Portátil)",
           "size_ml": 5,
-          "price": 36000,
+          "price": 600,
           "stock": 28,
           "sku": "RAS-HAW-05",
           "is_available": true
@@ -136,17 +136,18 @@
           "id": "var-hawas-10ml",
           "name": "Decant 10 ml (Atomizador Viaje)",
           "size_ml": 10,
-          "price": 70000,
+          "price": 1050,
           "stock": 19,
           "sku": "RAS-HAW-10",
-          "is_available": true
+          "is_available": true,
+          "compare_at_price": 1200
         },
         {
           "id": "var-hawas-100ml",
           "name": "Botella Sellada 100 ml (Presentación Completa)",
           "size_ml": 100,
-          "price": 250000,
-          "compare_at_price": 275000,
+          "price": 3950,
+          "compare_at_price": 4400,
           "stock": 8,
           "sku": "RAS-HAW-100",
           "is_available": true
@@ -198,13 +199,13 @@
         "/images/products/prod-9pm/2.jpg",
         "/images/products/prod-9pm/3.jpg"
       ],
-      "base_price": 32000,
+      "base_price": 500,
       "variants": [
         {
           "id": "var-9pm-5ml",
           "name": "Decant 5 ml (Muestra Portátil)",
           "size_ml": 5,
-          "price": 32000,
+          "price": 500,
           "stock": 42,
           "sku": "AFN-9PM-05",
           "is_available": true
@@ -213,17 +214,18 @@
           "id": "var-9pm-10ml",
           "name": "Decant 10 ml (Atomizador Viaje)",
           "size_ml": 10,
-          "price": 60000,
+          "price": 850,
           "stock": 30,
           "sku": "AFN-9PM-10",
-          "is_available": true
+          "is_available": true,
+          "compare_at_price": 1000
         },
         {
           "id": "var-9pm-100ml",
           "name": "Botella Sellada 100 ml (Presentación Completa)",
           "size_ml": 100,
-          "price": 215000,
-          "compare_at_price": 235000,
+          "price": 2950,
+          "compare_at_price": 3300,
           "stock": 14,
           "sku": "AFN-9PM-100",
           "is_available": true
@@ -277,13 +279,13 @@
         "/images/products/prod-club-de-nuit/2.jpg",
         "/images/products/prod-club-de-nuit/3.jpg"
       ],
-      "base_price": 36000,
+      "base_price": 550,
       "variants": [
         {
           "id": "var-cdnim-5ml",
           "name": "Decant 5 ml (Muestra Portátil)",
           "size_ml": 5,
-          "price": 36000,
+          "price": 550,
           "stock": 31,
           "sku": "ARM-CDN-05",
           "is_available": true
@@ -292,17 +294,18 @@
           "id": "var-cdnim-10ml",
           "name": "Decant 10 ml (Atomizador Viaje)",
           "size_ml": 10,
-          "price": 68000,
+          "price": 1000,
           "stock": 22,
           "sku": "ARM-CDN-10",
-          "is_available": true
+          "is_available": true,
+          "compare_at_price": 1150
         },
         {
           "id": "var-cdnim-100ml",
           "name": "Botella Sellada 105 ml (Edición Limitada)",
           "size_ml": 105,
-          "price": 260000,
-          "compare_at_price": 290000,
+          "price": 3850,
+          "compare_at_price": 4200,
           "stock": 9,
           "sku": "ARM-CDN-105",
           "is_available": true
@@ -354,13 +357,13 @@
         "/images/products/prod-asad/1.png",
         "/images/products/prod-asad/2.png"
       ],
-      "base_price": 32000,
+      "base_price": 500,
       "variants": [
         {
           "id": "var-asad-5ml",
           "name": "Decant 5 ml (Muestra Portátil)",
           "size_ml": 5,
-          "price": 32000,
+          "price": 500,
           "stock": 25,
           "sku": "LAT-ASD-05",
           "is_available": true
@@ -369,19 +372,21 @@
           "id": "var-asad-10ml",
           "name": "Decant 10 ml (Atomizador Viaje)",
           "size_ml": 10,
-          "price": 58000,
+          "price": 850,
           "stock": 18,
           "sku": "LAT-ASD-10",
-          "is_available": true
+          "is_available": true,
+          "compare_at_price": 1000
         },
         {
           "id": "var-asad-100ml",
           "name": "Botella Sellada 100 ml (Presentación Completa)",
           "size_ml": 100,
-          "price": 210000,
+          "price": 2850,
           "stock": 10,
           "sku": "LAT-ASD-100",
-          "is_available": true
+          "is_available": true,
+          "compare_at_price": 3200
         }
       ],
       "featured": false,
@@ -429,13 +434,13 @@
         "/images/products/prod-yara/2.png",
         "/images/products/prod-yara/3.png"
       ],
-      "base_price": 30000,
+      "base_price": 450,
       "variants": [
         {
           "id": "var-yara-5ml",
           "name": "Decant 5 ml (Muestra Portátil)",
           "size_ml": 5,
-          "price": 30000,
+          "price": 450,
           "stock": 37,
           "sku": "LAT-YAR-05",
           "is_available": true
@@ -444,17 +449,18 @@
           "id": "var-yara-10ml",
           "name": "Decant 10 ml (Atomizador Viaje)",
           "size_ml": 10,
-          "price": 56000,
+          "price": 800,
           "stock": 25,
           "sku": "LAT-YAR-10",
-          "is_available": true
+          "is_available": true,
+          "compare_at_price": 950
         },
         {
           "id": "var-yara-100ml",
           "name": "Botella Sellada 100 ml (Presentación Completa)",
           "size_ml": 100,
-          "price": 195000,
-          "compare_at_price": 215000,
+          "price": 2750,
+          "compare_at_price": 3100,
           "stock": 15,
           "sku": "LAT-YAR-100",
           "is_available": true
@@ -504,13 +510,13 @@
         "/images/products/prod-amber-oud-gold/1.jpg",
         "/images/products/prod-amber-oud-gold/2.jpg"
       ],
-      "base_price": 42000,
+      "base_price": 700,
       "variants": [
         {
           "id": "var-aog-5ml",
           "name": "Decant 5 ml (Muestra Portátil)",
           "size_ml": 5,
-          "price": 42000,
+          "price": 700,
           "stock": 20,
           "sku": "ALH-AOG-05",
           "is_available": true
@@ -519,17 +525,18 @@
           "id": "var-aog-10ml",
           "name": "Decant 10 ml (Atomizador Viaje)",
           "size_ml": 10,
-          "price": 79000,
+          "price": 1250,
           "stock": 14,
           "sku": "ALH-AOG-10",
-          "is_available": true
+          "is_available": true,
+          "compare_at_price": 1450
         },
         {
           "id": "var-aog-120ml",
           "name": "Botella Sellada 120 ml (Edición Oro)",
           "size_ml": 120,
-          "price": 330000,
-          "compare_at_price": 360000,
+          "price": 4850,
+          "compare_at_price": 5400,
           "stock": 6,
           "sku": "ALH-AOG-120",
           "is_available": true
@@ -579,13 +586,13 @@
         "/images/products/prod-oud-for-glory/2.png",
         "/images/products/prod-oud-for-glory/3.png"
       ],
-      "base_price": 34000,
+      "base_price": 500,
       "variants": [
         {
           "id": "var-ofg-5ml",
           "name": "Decant 5 ml (Muestra Portátil)",
           "size_ml": 5,
-          "price": 34000,
+          "price": 500,
           "stock": 22,
           "sku": "LAT-OFG-05",
           "is_available": true
@@ -594,19 +601,21 @@
           "id": "var-ofg-10ml",
           "name": "Decant 10 ml (Atomizador Viaje)",
           "size_ml": 10,
-          "price": 64000,
+          "price": 900,
           "stock": 16,
           "sku": "LAT-OFG-10",
-          "is_available": true
+          "is_available": true,
+          "compare_at_price": 1050
         },
         {
           "id": "var-ofg-100ml",
           "name": "Botella Sellada 100 ml (Presentación Completa)",
           "size_ml": 100,
-          "price": 225000,
+          "price": 3150,
           "stock": 7,
           "sku": "LAT-OFG-100",
-          "is_available": true
+          "is_available": true,
+          "compare_at_price": 3500
         }
       ],
       "featured": false,
