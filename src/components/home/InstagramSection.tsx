@@ -46,7 +46,7 @@ export function InstagramSection() {
                 <span>Comunidad Olfativa</span>
               </div>
               <h2 className="heading-section text-espresso font-editorial">
-                Sigue la Conversación en @adparfum
+                Sigue la Conversación en @fragancestockrd
               </h2>
               <p className="text-xs sm:text-sm text-taupe mt-1 font-light">
                 Unboxings, primeras impresiones, pruebas de fijación en vivo y debates con amantes del aroma.
@@ -54,7 +54,7 @@ export function InstagramSection() {
             </div>
 
             <Link
-              href="https://www.instagram.com/adparfum/"
+              href="https://www.instagram.com/fragancestockrd/"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary text-xs group"
@@ -75,7 +75,7 @@ export function InstagramSection() {
               className="h-full"
             >
               <Link
-                href="https://www.instagram.com/adparfum/"
+                href="https://www.instagram.com/fragancestockrd/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group aspect-[4/5] rounded-cowboy overflow-hidden bg-espresso border border-sand relative flex flex-col justify-end p-5 transition-all duration-700 hover:border-espresso hover:shadow-2xl glass-sheen block"

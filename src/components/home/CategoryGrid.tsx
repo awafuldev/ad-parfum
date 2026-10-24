@@ -20,7 +20,7 @@ export function CategoryGrid() {
                 <span>Exploración de Universos Olfativos</span>
               </div>
               <h2 className="heading-section text-espresso font-editorial">
-                Elige tu Camino en A&D Parfum
+                Elige tu Camino en Fragance Stock RD
               </h2>
             </div>
             <Link
@@ -65,7 +65,7 @@ export function CategoryGrid() {
                   <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
                     <span className="text-[10px] uppercase font-semibold tracking-luxury text-champagne">
-                      Colección Oficial A&D
+                      Colección Fragance Stock RD
                     </span>
                   </div>
                   <h3 className="font-editorial text-2xl sm:text-3xl font-normal tracking-tight">

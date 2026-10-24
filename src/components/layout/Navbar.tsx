@@ -31,7 +31,7 @@ export function Navbar() {
         const elem = document.getElementById("inventario");
         if (elem) {
           elem.scrollIntoView({ behavior: "smooth" });
-          window.dispatchEvent(new CustomEvent("adparfum:search", { detail: searchQuery.trim() }));
+          window.dispatchEvent(new CustomEvent("fragance:search", { detail: searchQuery.trim() }));
         } else {
           router.push(`/#inventario?search=${encodeURIComponent(searchQuery.trim())}`);
         }
@@ -99,8 +99,8 @@ export function Navbar() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/logo-light.png"
-                  alt="A&D Parfum"
-                  className="h-9 sm:h-11 w-auto object-contain filter drop-shadow-[0_2px_14px_rgba(0,0,0,0.6)]"
+                  alt="Fragance Stock RD"
+                  className="h-10 sm:h-12 w-auto object-contain filter drop-shadow-[0_2px_14px_rgba(0,0,0,0.6)]"
                 />
               </Link>
             </div>
@@ -142,7 +142,7 @@ export function Navbar() {
 
               {/* WhatsApp VIP Concierge Pill (Desktop) */}
               <a
-                href="https://wa.me/18293751717?text=Hola%20A%26D%20Parfum,%20deseo%20asesor%C3%ADa%20personalizada%20sobre%20una%20fragancia"
+                href="https://wa.me/18096788027?text=Hola%20Fragance%20Stock%20RD,%20deseo%20asesor%C3%ADa%20personalizada%20sobre%20una%20fragancia"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 text-[11px] text-white/80 hover:text-white transition-all shadow-xs flex-shrink-0"
@@ -188,7 +188,7 @@ export function Navbar() {
             <div className="relative bg-white w-full max-w-xl rounded-cowboy border border-border shadow-2xl p-6 sm:p-8 animate-in zoom-in-95 duration-200">
               <div className="flex items-center justify-between pb-4 border-b border-border">
                 <span className="text-xs uppercase tracking-luxury text-gray font-semibold">
-                  Buscar en el inventario A&D Parfum
+                  Buscar en el inventario Fragance Stock RD
                 </span>
                 <button
                   onClick={() => setSearchOpen(false)}
@@ -223,7 +223,7 @@ export function Navbar() {
                           const elem = document.getElementById("inventario");
                           if (elem) {
                             elem.scrollIntoView({ behavior: "smooth" });
-                            window.dispatchEvent(new CustomEvent("adparfum:search", { detail: term }));
+                            window.dispatchEvent(new CustomEvent("fragance:search", { detail: term }));
                           }
                         } else {
                           router.push(`/#inventario?search=${encodeURIComponent(term)}`);
@@ -262,8 +262,8 @@ export function Navbar() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/logo-light.png"
-                  alt="A&D Parfum"
-                  className="h-9 w-auto object-contain"
+                  alt="Fragance Stock RD"
+                  className="h-10 w-auto object-contain"
                 />
                 <button
                   onClick={() => setMobileMenuOpen(false)}
@@ -303,14 +303,14 @@ export function Navbar() {
 
             <div className="space-y-4 pt-6 border-t border-white/10">
               <Link
-                href="https://www.instagram.com/eidiparfum/"
+                href="https://www.instagram.com/fragancestockrd/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between w-full py-2.5 px-4 rounded-cowboy bg-white/5 hover:bg-white/10 border border-white/10 text-xs text-white transition-colors"
               >
                 <span className="flex items-center gap-2">
                   <Instagram className="w-4 h-4 text-wine-light" />
-                  <span>@eidiparfum en Instagram</span>
+                  <span>@fragancestockrd en Instagram</span>
                 </span>
                 <ArrowRight className="w-3.5 h-3.5 text-white/50" />
               </Link>

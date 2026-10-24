@@ -73,7 +73,7 @@ export function CartDrawer() {
             {freeShippingProgress.isFree ? (
               <p className="text-espresso font-medium flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-champagne inline-block animate-pulse" />
-                <span>¡Disfrutas de <strong>Envío Gratis</strong> con A&D Parfum!</span>
+                <span>¡Disfrutas de <strong>Envío Gratis</strong> con Fragance Stock RD!</span>
               </p>
             ) : freeShippingThreshold > 0 ? (
               <div>
@@ -117,7 +117,7 @@ export function CartDrawer() {
                   onClick={closeCart}
                   className="btn-gold text-xs"
                 >
-                  Explorar Fragancias A&D
+                  Explorar Fragancias
                 </Link>
               </div>
             ) : (

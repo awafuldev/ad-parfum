@@ -219,7 +219,7 @@ export function AdminDashboardClient({
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/logo-dark.png"
-              alt="A&D Parfum"
+              alt="Fragance Stock RD"
               className="h-12 w-auto mx-auto object-contain mb-3"
             />
             <p className="text-xs text-taupe font-medium">
@@ -271,16 +271,16 @@ export function AdminDashboardClient({
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/logo-dark.png"
-                alt="A&D Parfum"
+                alt="Fragance Stock RD"
                 className="h-8 w-auto object-contain"
               />
               <span className="font-editorial text-2xl font-normal text-espresso">
-                Panel de Control • A&D Parfum
+                Panel de Control • Fragance Stock RD
               </span>
               <span className="w-2 h-2 rounded-full bg-emerald-500" />
             </div>
             <p className="text-xs text-taupe mt-1 font-light">
-              Gestión autónoma de fragancias, pedidos reales, inventario y políticas comerciales de A&D Parfum.
+              Gestión autónoma de fragancias, pedidos reales, inventario y políticas comerciales de Fragance Stock RD.
             </p>
           </div>
 

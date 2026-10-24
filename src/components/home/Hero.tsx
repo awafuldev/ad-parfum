@@ -22,7 +22,7 @@ export function Hero() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/hero-campaign.jpg"
-          alt="Campaña A&D Parfum — Alta Perfumería & Decants de Lujo"
+          alt="Campaña Fragance Stock RD — Perfumes 100% Originales & Decants"
           className="absolute inset-0 w-full h-full object-cover object-center transform scale-100 transition-transform duration-1000 ease-out will-change-transform"
         />
 
@@ -45,7 +45,7 @@ export function Hero() {
           <div className="flex items-center justify-between text-[11px] uppercase tracking-luxury text-white/60 pt-2">
             <div className="flex items-center gap-3">
               <span className="w-1.5 h-1.5 rounded-full bg-wine" />
-              <span className="font-medium text-white/80">A&amp;D Parfum • Edición 2026</span>
+              <span className="font-medium text-white/80">Fragance Stock RD • Edición 2026</span>
             </div>
             <span className="hidden sm:inline-block text-white/50 tracking-ultraWide">
               Santo Domingo • República Dominicana
@@ -56,17 +56,17 @@ export function Hero() {
           <div className="max-w-2xl space-y-5 sm:space-y-6 pb-4 sm:pb-8">
             
             {/* Official Brand Logo Emblem (Transparent PNG) & Brand Pill */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/logo-light.png"
-                alt="A&D Parfum — Alta Perfumería"
-                className="h-12 sm:h-16 w-auto object-contain filter drop-shadow-[0_8px_24px_rgba(0,0,0,0.7)] self-start"
+                alt="Fragance Stock RD"
+                className="h-16 sm:h-24 w-auto object-contain filter drop-shadow-[0_8px_24px_rgba(0,0,0,0.8)] self-start"
               />
-              <div className="h-8 w-[1px] bg-white/20 hidden sm:block" />
+              <div className="h-10 w-[1px] bg-white/20 hidden sm:block" />
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[10px] sm:text-[11px] uppercase tracking-widest text-white/90 w-fit">
                 <i className="fa-solid fa-wand-magic-sparkles text-wine-light text-xs" />
-                <span>Alta Perfumería de Autor &amp; Decants en Cristal</span>
+                <span>Perfumes 100% Originales &amp; Decants en Cristal</span>
               </div>
             </div>
 

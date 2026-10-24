@@ -22,7 +22,7 @@ export function BrandStrip() {
               Los Grandes Nombres de Medio Oriente
             </h2>
             <p className="text-xs sm:text-sm text-taupe mt-2 font-light">
-              Perfiles olfativos certificados elaborados con aceites finos y alta concentración para A&D Parfum.
+              Perfiles olfativos certificados elaborados con aceites finos y alta concentración para Fragance Stock RD.
             </p>
           </div>
         </RevealOnScroll>

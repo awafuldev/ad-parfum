@@ -27,10 +27,10 @@ export default function CartPage() {
             Tu bolsa de compra está vacía
           </h1>
           <p className="text-xs sm:text-sm text-smoke mb-8 font-light">
-            Explora nuestra colección de perfumes árabes o prueba un decant de 5ml o 10ml en atomizador de cristal de A&D Parfum.
+            Explora nuestra colección de perfumes 100% originales o prueba un decant en atomizador de cristal de Fragance Stock RD.
           </p>
           <Link href="/perfumes" className="btn-gold text-xs">
-            Explorar Catálogo A&D
+            Explorar Catálogo
           </Link>
         </div>
       </div>
@@ -43,7 +43,7 @@ export default function CartPage() {
         
         <div className="pb-8 border-b border-sand">
           <h1 className="heading-section text-espresso font-editorial">
-            Bolsa de Compra A&D Parfum
+            Bolsa de Compra — Fragance Stock RD
           </h1>
           <p className="text-xs text-taupe mt-1 font-light">
             Revisa tus fragancias seleccionadas antes de proceder al checkout seguro.

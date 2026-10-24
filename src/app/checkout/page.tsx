@@ -39,25 +39,33 @@ function CheckoutBrand() {
         <div className="space-y-1">
           <p className="text-[10px] uppercase tracking-luxury text-white/50 font-medium flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-wine inline-block" />
-            Alta Perfumería · República Dominicana
+            Perfumería 100% Original · República Dominicana
           </p>
-          <h2 className="font-editorial text-2xl sm:text-3xl font-normal tracking-tight text-white leading-none">
-            A&D <span className="italic">Parfum</span>
-          </h2>
-          <p className="text-xs text-white/55 font-light leading-relaxed max-w-xs">
-            Tu fragancia, entregada en República Dominicana.
+          <div className="flex items-center gap-3 pt-1">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/logo-light.png"
+              alt="Fragance Stock RD"
+              className="h-10 w-auto object-contain"
+            />
+            <h2 className="font-editorial text-2xl sm:text-3xl font-normal tracking-tight text-white leading-none">
+              Fragance <span className="italic">Stock RD</span>
+            </h2>
+          </div>
+          <p className="text-xs text-white/55 font-light leading-relaxed max-w-xs pt-1">
+            Perfumes y decants auténticos, entregados en República Dominicana.
           </p>
         </div>
 
         {/* Discrete WA contact */}
         <a
-          href="https://wa.me/18293751717"
+          href="https://wa.me/18096788027"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-xs text-white/70 hover:text-white transition-colors group"
         >
           <Phone className="w-3.5 h-3.5 text-emerald-400 group-hover:text-emerald-300 transition-colors" />
-          <span className="font-medium tracking-wide">+1 (829) 375-1717</span>
+          <span className="font-medium tracking-wide">+1 (809) 678-8027</span>
           <ExternalLink className="w-3 h-3 opacity-50" />
         </a>
       </div>
@@ -118,7 +126,7 @@ export default function CheckoutPage() {
 
     setIsRedirecting(true);
 
-    const whatsappNumber = settings?.whatsapp_number || "18293751717";
+    const whatsappNumber = settings?.whatsapp_number || "18096788027";
     const waUrl = buildWhatsAppCartUrl(
       items,
       subtotal,

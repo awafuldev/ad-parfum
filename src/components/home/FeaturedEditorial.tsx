@@ -21,7 +21,7 @@ export function FeaturedEditorial() {
                 <span>Curaduría de Maestros Olfativos</span>
               </div>
               <h2 className="heading-section text-espresso font-editorial">
-                Los Iconos de la Casa A&D
+                Los Iconos Más Solicitados
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-taupe max-w-md font-light leading-relaxed">
@@ -95,7 +95,7 @@ export function FeaturedEditorial() {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src="/images/hero-campaign.jpg"
-                      alt="Lattafa Khamrah en A&D Parfum"
+                      alt="Lattafa Khamrah en Fragance Stock RD"
                       className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                   </div>
@@ -131,7 +131,7 @@ export function FeaturedEditorial() {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src="/images/azure-aquatic.jpg"
-                      alt="Rasasi Hawas for Him en A&D Parfum"
+                      alt="Rasasi Hawas for Him en Fragance Stock RD"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-95"
                     />
                   </div>

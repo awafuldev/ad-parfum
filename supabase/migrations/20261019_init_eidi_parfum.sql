@@ -1,6 +1,6 @@
 -- ============================================================================
--- EIDI PARFUM — PRODUCTION POSTGRESQL & SUPABASE DATABASE SCHEMA
--- Migration: 20261019_init_eidi_parfum.sql
+-- FRAGANCE STOCK RD — PRODUCTION POSTGRESQL & SUPABASE DATABASE SCHEMA
+-- Migration: 20261019_init_fragance_stock_rd.sql
 -- ============================================================================
 
 -- Enable UUID extension
@@ -118,14 +118,14 @@ CREATE TABLE IF NOT EXISTS order_items (
 -- 7. STORE SETTINGS
 CREATE TABLE IF NOT EXISTS store_settings (
   id INTEGER PRIMARY KEY DEFAULT 1 CHECK (id = 1),
-  store_name TEXT NOT NULL DEFAULT 'Eidi Parfum',
+  store_name TEXT NOT NULL DEFAULT 'Fragance Stock RD',
   store_slogan TEXT NOT NULL,
-  currency_code TEXT NOT NULL DEFAULT 'COP',
-  currency_symbol TEXT NOT NULL DEFAULT '$',
+  currency_code TEXT NOT NULL DEFAULT 'DOP',
+  currency_symbol TEXT NOT NULL DEFAULT 'RD$',
   whatsapp_number TEXT NOT NULL,
   whatsapp_display TEXT NOT NULL,
-  instagram_handle TEXT NOT NULL DEFAULT 'eidiparfum',
-  instagram_url TEXT NOT NULL DEFAULT 'https://www.instagram.com/eidiparfum/',
+  instagram_handle TEXT NOT NULL DEFAULT 'fragancestockrd',
+  instagram_url TEXT NOT NULL DEFAULT 'https://www.instagram.com/fragancestockrd/',
   email TEXT NOT NULL,
   announcement_text TEXT NOT NULL,
   announcement_enabled BOOLEAN DEFAULT TRUE,

@@ -16,15 +16,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = await getProductById(params.id);
   if (!product) {
     return {
-      title: "Perfume no encontrado | A&D Parfum",
+      title: "Perfume no encontrado | Fragance Stock RD",
     };
   }
 
   return {
-    title: `${product.name} — ${product.brand_name} | A&D Parfum`,
-    description: `${product.short_description} Disponible en decants de 5ml, 10ml y presentación completa en A&D Parfum en República Dominicana.`,
+    title: `${product.name} — ${product.brand_name} | Fragance Stock RD`,
+    description: `${product.short_description} Disponible en decants y presentación completa en Fragance Stock RD en República Dominicana.`,
     openGraph: {
-      title: `${product.name} (${product.brand_name}) — A&D Parfum`,
+      title: `${product.name} (${product.brand_name}) — Fragance Stock RD`,
       description: product.short_description,
       images: [{ url: product.primary_image }],
     },

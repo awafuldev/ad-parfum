@@ -28,7 +28,7 @@ const PHASES: Phase[] = [
       "Selección manual de canela silvestre de Ceilán, vainas de vainilla Bourbon de Madagascar y resinas ámbar cosechadas en su punto óptimo de maduración olfativa.",
     notes: ["Canela de Ceilán", "Vainilla Bourbon", "Dátiles Confitados", "Nuez Moscada"],
     image: "/images/alchemy-ingredients.jpg",
-    imageAlt: "Ingredientes botánicos y alambique de perfumería A&D Parfum",
+    imageAlt: "Ingredientes botánicos y alambique de perfumería Fragance Stock RD",
     metric: { label: "Pureza de Extracto", value: "100% Genuino" },
     badge: "Fase Botánica",
     colorTone: "from-amber-950/80 via-espresso/90 to-espresso",
@@ -56,7 +56,7 @@ const PHASES: Phase[] = [
       "Cada decant es fraccionado en nuestro laboratorio bajo pedido directo en atomizadores de cristal neutro de rosca hermética. Bruma ultra fina que respeta la pirámide olfativa completa durante más de 14 horas.",
     notes: ["Bruma Ultra Fina", "Cristal Neutro", "Cero Plásticos", "14-16h de Fijación"],
     image: "/images/hero-campaign.jpg",
-    imageAlt: "Frasco luminoso de perfume A&D Parfum",
+    imageAlt: "Frasco luminoso de perfume Fragance Stock RD",
     metric: { label: "Longevidad en Piel", value: "12 a 16 Horas" },
     badge: "Fase de Emisión",
     colorTone: "from-amber-900/80 via-espresso/90 to-espresso",
@@ -127,7 +127,7 @@ export function SignatureMotionExperience() {
             <div className="flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-champagne animate-pulse" />
               <span className="text-[10px] uppercase tracking-luxury text-champagne font-bold">
-                Metamorfosis Olfativa A&D
+                Metamorfosis Olfativa Fragance Stock RD
               </span>
               <span className="text-sand/30">•</span>
               <span className="text-xs font-editorial italic text-sand">L&apos;Art de l&apos;Extraction</span>

@@ -536,8 +536,8 @@ export function ProductDetailClient({ product, relatedProducts }: Props) {
               {/* Fast WhatsApp Direct Order / Question */}
               <div className="pt-1 text-center">
                 <a
-                  href={`https://wa.me/18293751717?text=${encodeURIComponent(
-                    `Hola A&D Parfum, deseo consultar sobre la fragancia ${product.name} (${product.brand_name}) en presentación ${getVariantLabel(
+                  href={`https://wa.me/18096788027?text=${encodeURIComponent(
+                    `Hola Fragance Stock RD, deseo consultar sobre la fragancia ${product.name} (${product.brand_name}) en presentación ${getVariantLabel(
                       selectedVariant
                     )}.`
                   )}`}

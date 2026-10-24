@@ -19,7 +19,7 @@ export function BrandStory() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=1000&q=85"
-                  alt="Filosofía A&D Parfum y Decants de Cristal"
+                  alt="Filosofía Fragance Stock RD y Decants de Cristal"
                   className="w-full h-full object-cover filter brightness-90 contrast-110 transition-transform duration-1000 ease-out hover:scale-105"
                 />
               </GlassTiltCard>
@@ -30,7 +30,7 @@ export function BrandStory() {
               <div className="flex items-center gap-1.5 mb-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-champagne" />
                 <p className="text-[10px] uppercase tracking-luxury text-champagne font-semibold">
-                  Sello A&D Parfum
+                  Sello Fragance Stock RD
                 </p>
               </div>
               <p className="font-editorial text-base italic font-light leading-snug">
@@ -55,7 +55,7 @@ export function BrandStory() {
             <RevealOnScroll direction="up" delayMs={120}>
               <div className="space-y-4 text-sm text-smoke leading-relaxed font-light">
                 <p>
-                  En <strong>A&D Parfum</strong> nacemos de la pasión por desmitificar el universo de las fragancias árabes y los elixires de autor. Durante años, adquirir un perfume representaba un riesgo económico elevado al depender de compras a ciegas o referencias publicitarias ajenas a la química real de cada piel.
+                  En <strong>Fragance Stock RD</strong> nacemos de la pasión por desmitificar el universo de las fragancias árabes y los elixires de autor. Durante años, adquirir un perfume representaba un riesgo económico elevado al depender de compras a ciegas o referencias publicitarias ajenas a la química real de cada piel.
                 </p>
                 <p>
                   Nuestra propuesta combina un servicio riguroso de decants fraccionados en formatos portátiles de 5ml y 10ml, además de botellas originales selladas de fábrica en sus cajas oficiales.

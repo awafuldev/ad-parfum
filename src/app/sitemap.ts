@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { getProducts } from "@/lib/storage";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://adparfum.com";
+  const baseUrl = "https://fragancestockrd.com";
   const products = await getProducts();
 
   const productRoutes = products.map((product) => ({

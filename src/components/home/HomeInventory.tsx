@@ -47,8 +47,8 @@ export function HomeInventory({ products, categories = [], brands = [] }: Props)
         setSearch(customEvent.detail);
       }
     };
-    window.addEventListener("adparfum:search", handleSearchEvent);
-    return () => window.removeEventListener("adparfum:search", handleSearchEvent);
+    window.addEventListener("fragance:search", handleSearchEvent);
+    return () => window.removeEventListener("fragance:search", handleSearchEvent);
   }, []);
 
   // Distinct brand list from products

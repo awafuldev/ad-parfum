@@ -476,7 +476,7 @@ export function CatalogClient({ initialProducts, brands, categories }: Props) {
                   onClick={clearAllFilters}
                   className="btn-gold text-xs"
                 >
-                  Ver Todo el Catálogo A&D
+                  Ver Todo el Catálogo
                 </button>
               </div>
             ) : (
@@ -543,7 +543,7 @@ export function CatalogClient({ initialProducts, brands, categories }: Props) {
           <div className="fixed inset-y-0 right-0 w-full max-w-xs bg-porcelain border-l border-sand p-6 flex flex-col justify-between shadow-2xl animate-in slide-in-from-right duration-300 overflow-y-auto">
             <div>
               <div className="flex items-center justify-between pb-4 border-b border-sand">
-                <h3 className="font-editorial text-xl font-normal text-espresso">Filtros A&D</h3>
+                <h3 className="font-editorial text-xl font-normal text-espresso">Filtros de Búsqueda</h3>
                 <button
                   onClick={() => setFilterDrawerOpen(false)}
                   className="p-1.5 text-graphite hover:text-espresso rounded-full"

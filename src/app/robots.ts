@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/admin", "/api/"],
     },
-    sitemap: "https://adparfum.com/sitemap.xml",
+    sitemap: "https://fragancestockrd.com/sitemap.xml",
   };
 }

@@ -39,7 +39,7 @@ export default async function OrderConfirmationPage({ params }: Props) {
           </div>
 
           <span className="text-[10px] uppercase font-bold tracking-luxury text-champagne bg-espresso px-3.5 py-1 rounded-full border border-champagne/30">
-            Pedido Confirmado • A&D Parfum
+            Pedido Confirmado • Fragance Stock RD
           </span>
 
           <h1 className="font-editorial text-4xl sm:text-5xl font-normal text-espresso">

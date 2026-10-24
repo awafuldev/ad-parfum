@@ -5,8 +5,8 @@ import { AdminDashboardClient } from "@/components/admin/AdminDashboardClient";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Panel de Control Administrativo | A&D Parfum",
-  description: "Panel de administración y gestión de inventario y pedidos de A&D Parfum.",
+  title: "Panel de Control Administrativo | Fragance Stock RD",
+  description: "Panel de administración y gestión de inventario y pedidos de Fragance Stock RD.",
 };
 
 export default async function AdminPage() {

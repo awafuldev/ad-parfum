@@ -6,27 +6,28 @@ import { CartDrawer } from "@/components/cart/CartDrawer";
 import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "A&D Parfum — Haute Parfumerie, Nicho & Decants de Autor",
+  title: "Fragance Stock RD — Perfumes 100% Originales & Decants en República Dominicana",
   description:
-    "Curaduría de alta perfumería árabe, creaciones de nicho y decants exclusivos en atomizadores de cristal. Descubre tu memoria olfativa con A&D Parfum en República Dominicana.",
+    "Perfumería exclusiva en República Dominicana. Fragancias 100% originales para hombres y mujeres, decants en cristal y botellas selladas con delivery en Santo Domingo y envíos a todo el país.",
   keywords: [
-    "A&D Parfum",
-    "AD Parfum",
-    "Perfumes Árabes República Dominicana",
-    "Decants de Lujo",
+    "Fragance Stock RD",
+    "Fragance Stock",
+    "Perfumes República Dominicana",
+    "Perfumes Santo Domingo",
+    "Perfumes Árabes RD",
+    "Decants de Perfumes",
     "Lattafa Khamrah",
     "Rasasi Hawas",
     "Afnan 9 PM",
     "Club de Nuit Intense",
-    "Muestras de perfume 5ml 10ml",
   ],
-  authors: [{ name: "A&D Parfum" }],
+  authors: [{ name: "Fragance Stock RD" }],
   openGraph: {
-    title: "A&D Parfum — Haute Parfumerie & Decants de Autor",
+    title: "Fragance Stock RD — Perfumes 100% Originales & Decants",
     description:
-      "La más selecta curaduría de perfumes árabes, elixires de nicho y decants originales fraccionados en cristal. Envíos en República Dominicana.",
-    url: "https://adparfum.com",
-    siteName: "A&D Parfum",
+      "Fragancias 100% originales para hombres y mujeres. Decants en cristal y botellas completas. Delivery en Santo Domingo y envíos a toda República Dominicana.",
+    url: "https://fragancestockrd.com",
+    siteName: "Fragance Stock RD",
     locale: "es_DO",
     type: "website",
   },

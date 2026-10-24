@@ -51,12 +51,12 @@ export function Footer() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/logo-light.png"
-                alt="A&D Parfum"
-                className="h-9 w-auto object-contain mx-auto md:mx-0"
+                alt="Fragance Stock RD"
+                className="h-10 w-auto object-contain mx-auto md:mx-0"
               />
             </Link>
             <p className="text-xs text-white/70 font-light leading-relaxed">
-              Curaduría de alta perfumería árabe, creaciones de autor y decants exclusivos fraccionados en atomizador de cristal. Envíos coordinados a toda República Dominicana.
+              Perfumes 100% originales para hombres y mujeres, decants exclusivos en cristal y presentaciones completas. Delivery en Santo Domingo y envíos a toda República Dominicana.
             </p>
           </div>
 
@@ -69,13 +69,13 @@ export function Footer() {
               Catálogo Completo
             </Link>
             <Link
-              href="https://www.instagram.com/eidiparfum/"
+              href="https://www.instagram.com/fragancestockrd/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 hover:text-white transition-colors"
             >
               <Instagram className="w-3.5 h-3.5 text-wine-light" />
-              <span>@eidiparfum</span>
+              <span>@fragancestockrd</span>
             </Link>
             <Link
               href="/admin"
@@ -90,7 +90,7 @@ export function Footer() {
 
         {/* Bottom Bar: Copyright, Guarantees & Official CETU Studios Badge */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-[11px] text-white/60">
-          <p>© {new Date().getFullYear()} A&amp;D Parfum. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear()} Fragance Stock RD. Todos los derechos reservados.</p>
           
           {/* CETU Studios Credit with Official Badge (same as EBC Dominicana) */}
           <a

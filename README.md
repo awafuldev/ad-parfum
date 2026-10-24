@@ -1,16 +1,16 @@
-# A&D PARFUM — HAUTE PARFUMERIE & DECANTS
+# FRAGANCE STOCK RD — PERFUMES 100% ORIGINALES & DECANTS
 ## Plataforma E-Commerce MVP de Alto Rendimiento
 
-> **Dirección Visual:** Luxury Editorial Fragrance House (Cowboy Minimalist Foundation + Rich Warm Contrasts)  
-> **Comunidad & Canal Oficial:** [@eidiparfum en Instagram](https://www.instagram.com/eidiparfum/)  
-> **Mercado Operativo Principal:** República Dominicana (Santo Domingo, Santiago, La Romana y cobertura nacional)  
+> **Dirección Visual:** Luxury Editorial Fragrance House (Contemporary Obsidian Noir & Rich Wine Accents)  
+> **Comunidad & Canal Oficial:** [@fragancestockrd en Instagram](https://www.instagram.com/fragancestockrd/)  
+> **Mercado Operativo Principal:** República Dominicana (Santo Domingo y cobertura nacional)  
 > **Moneda:** Pesos Dominicanos (RD$ DOP) con formateo regional `es-DO` e integridad matemática.
 
 ---
 
 ## 1. VISIÓN DEL PRODUCTO & IDENTIDAD DE MARCA
 
-A&D Parfum es una casa curadora especializada en la democratización de la alta perfumería contemporánea, centrándose primordialmente en los perfumes árabes más elogiados a nivel mundial (Lattafa, Afnan, Armaf, Rasasi, Al Haramain), elixires de nicho y decants fraccionados de lujo (5ml y 10ml) en atomizadores de cristal.
+Fragance Stock RD es una tienda especializada en perfumes 100% originales para hombres y mujeres, botellas selladas y decants fraccionados en atomizadores de cristal para República Dominicana.
 
 ### Principio Fundamental de Diseño
 > *"La interfaz desaparece. La fragancia se convierte en la experiencia."*
@@ -50,7 +50,7 @@ La tienda no emplea plantillas genéricas ni sombras pesadas. Utiliza una estét
 ## 4. FUNCIONALIDADES IMPLEMENTADAS EN EL MVP
 
 ### 1. Portada Editorial de Alto Impacto (`/`)
-- **Cintillo de Anuncios:** Mensaje verificado de República Dominicana y enlace oficial a Instagram (@eidiparfum).
+- **Cintillo de Anuncios:** Mensaje verificado de República Dominicana y enlace oficial a Instagram (@fragancestockrd).
 - **Navegación Superior:** Wordmark con tracking editorial, enlaces de categoría, buscador predictivo integrado y bolsa de compras con contador en vivo.
 - **Hero Editorial:** Fotografía de campaña de alta definición, titulares directos y llamadas a la acción en cápsula.
 - **Colección Seleccionada (Bestsellers):** Tarjetas asimétricas minimalistas con notas, duración estimada, precio y acceso a formatos.

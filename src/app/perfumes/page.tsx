@@ -5,9 +5,9 @@ import { CatalogClient } from "@/components/catalog/CatalogClient";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Catálogo de Perfumes & Decants | A&D Parfum",
+  title: "Catálogo de Perfumes & Decants | Fragance Stock RD",
   description:
-    "Explora nuestra selecta curaduría de perfumes árabes, fragancias de nicho y decants de 5ml y 10ml en frascos de cristal. Filtrado por notas, familias olfativas y casas oficiales.",
+    "Explora nuestra selecta curaduría de perfumes 100% originales, fragancias árabes, de nicho y decants en frascos de cristal.",
 };
 
 export default async function PerfumesPage() {
@@ -18,7 +18,7 @@ export default async function PerfumesPage() {
   ]);
 
   return (
-    <Suspense fallback={<div className="py-24 text-center text-sm text-taupe font-editorial italic">Cargando colección A&D Parfum...</div>}>
+    <Suspense fallback={<div className="py-24 text-center text-sm text-taupe font-editorial italic">Cargando colección Fragance Stock RD...</div>}>
       <CatalogClient
         initialProducts={products}
         brands={brands}

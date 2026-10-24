@@ -1042,21 +1042,21 @@
     }
   ],
   "settings": {
-    "store_name": "A&D Parfum",
-    "store_slogan": "Alta Perfumería de Medio Oriente, Creaciones de Nicho & Decants de Autor",
+    "store_name": "Fragance Stock RD",
+    "store_slogan": "Perfumes 100% Originales & Decants Exclusivos en República Dominicana",
     "currency_code": "DOP",
     "currency_symbol": "RD$",
-    "whatsapp_number": "18293751717",
-    "whatsapp_display": "+1 (829) 375-1717",
-    "instagram_handle": "eidiparfum",
-    "instagram_url": "https://www.instagram.com/eidiparfum/",
-    "email": "contacto@adparfum.com",
-    "announcement_text": "A&D Parfum — Haute Parfumerie en República Dominicana • Decants 100% auténticos en atomizador de cristal",
+    "whatsapp_number": "18096788027",
+    "whatsapp_display": "+1 (809) 678-8027",
+    "instagram_handle": "fragancestockrd",
+    "instagram_url": "https://www.instagram.com/fragancestockrd/",
+    "email": "contacto@fragancestockrd.com",
+    "announcement_text": "Fragance Stock RD • Perfumes 100% Originales y Decants en República Dominicana • Envíos a todo el país",
     "announcement_enabled": true,
     "free_shipping_threshold": 0,
     "standard_shipping_fee": 0,
     "express_shipping_fee": 0,
-    "delivery_coverage": "República Dominicana (envío a coordinar por WhatsApp)",
+    "delivery_coverage": "Santo Domingo y toda República Dominicana (envío a coordinar por WhatsApp)",
     "address_placeholder": "República Dominicana"
   }
 }

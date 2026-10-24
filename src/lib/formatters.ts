@@ -36,7 +36,7 @@ export function formatDate(isoString: string): string {
 export function generateOrderReference(): string {
   const year = new Date().getFullYear();
   const random = Math.floor(1000 + Math.random() * 9000);
-  return `AD-${year}-${random}`;
+  return `FS-${year}-${random}`;
 }
 
 /**
@@ -72,7 +72,7 @@ export function buildWhatsAppOrderUrl(order: Order, whatsappNumber?: string): st
       : "Pago con Tarjeta de Crédito / Débito";
 
   const message =
-    `*NUEVO PEDIDO — A&D PARFUM*\n\n` +
+    `*NUEVO PEDIDO — FRAGANCE STOCK RD*\n\n` +
     `*Referencia:* ${order.reference}\n` +
     `*Cliente:* ${order.customer_name}\n` +
     `*Teléfono / WhatsApp:* ${order.customer_phone}\n` +
@@ -98,16 +98,16 @@ export interface CartItemLike {
 
 /**
  * Builds direct WhatsApp checkout URL from active cart items.
- * Defaults to Dominican official contact number +1 (829) 375-1717.
+ * Defaults to Dominican official contact number +1 (809) 678-8027.
  */
 export function buildWhatsAppCartUrl(
   items: CartItemLike[],
   subtotal: number,
   customerName?: string,
   customerCity?: string,
-  whatsappNumber: string = "18293751717"
+  whatsappNumber: string = "18096788027"
 ): string {
-  const cleanPhone = whatsappNumber.replace(/[^0-9]/g, "") || "18293751717";
+  const cleanPhone = whatsappNumber.replace(/[^0-9]/g, "") || "18096788027";
 
   const itemsText = items
     .map(
@@ -126,7 +126,7 @@ export function buildWhatsAppCartUrl(
     .join("\n");
 
   const message =
-    `*PEDIDO A&D PARFUM — REPÚBLICA DOMINICANA*\n\n` +
+    `*PEDIDO FRAGANCE STOCK RD — REPÚBLICA DOMINICANA*\n\n` +
     (customerInfo ? `${customerInfo}\n\n` : "") +
     `*FRAGANCIAS SOLICITADAS:*\n` +
     `${itemsText}\n\n` +

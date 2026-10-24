@@ -157,7 +157,7 @@ export function OlfactoryExplorer({ products }: Props) {
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sand/10 border border-champagne/35 text-champagne text-xs font-medium mb-3 backdrop-blur-md">
                 <Sparkles className="w-3.5 h-3.5 text-champagne" />
-                <span className="font-editorial text-xs italic">Santuario Olfativo A&D</span>
+                <span className="font-editorial text-xs italic">Santuario Olfativo Fragance Stock RD</span>
               </div>
               <h2 className="heading-section text-porcelain font-editorial">
                 Arquitectura de Notas & Familias

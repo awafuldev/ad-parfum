@@ -16,11 +16,11 @@ export default function NotFound() {
           El aroma que buscas no está disponible
         </h1>
         <p className="text-xs text-smoke leading-relaxed font-light">
-          La fragancia o sección que buscas en A&D Parfum ha cambiado de ubicación o ya no se encuentra en nuestro catálogo activo.
+          La fragancia o sección que buscas en Fragance Stock RD ha cambiado de ubicación o ya no se encuentra en nuestro catálogo activo.
         </p>
         <div className="pt-4">
           <Link href="/perfumes" className="btn-gold text-xs">
-            <span>Regresar al Catálogo A&D</span>
+            <span>Regresar al Catálogo</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
